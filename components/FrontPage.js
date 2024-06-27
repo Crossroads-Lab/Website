@@ -15,9 +15,9 @@ export class FrontPage extends HTMLElement {
 
     // Get individual components.
     const style = shadow.childNodes[0],
-    headline = shadow.childNodes[1],
-    description = shadow.childNodes[2],
-    link = shadow.childNodes[3];
+      headline = shadow.childNodes[1],
+      description = shadow.childNodes[2],
+      link = shadow.childNodes[3];
 
     // Get properties and set attributes.
     this.setAttribute('title', 'Welcome to Crossroads Venture Studio, the venture that incubate your ideas');
