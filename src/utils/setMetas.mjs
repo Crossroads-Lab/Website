@@ -1,5 +1,5 @@
 // Imports.
-import getHead from './getHead.mjs';
+import head from './head.mjs';
 
 // Helper function to set the meta tags in the document head.
 export const setMetas = ({
@@ -25,9 +25,6 @@ export const setMetas = ({
   charset = 'utf-8',
   viewport = 'width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover, user-scalable=no'
 } = {}) => {
-  // Get head node.
-  const head = getHead();
-
   // Set title.
   title && ((head.title || head.appendChild(document.createElement('title'))).innerHTML = title);
   

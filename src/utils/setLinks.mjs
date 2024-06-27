@@ -1,5 +1,5 @@
 // Imports.
-import getHead from './getHead.mjs';
+import head from './head.mjs';
 
 // Helper function to set the meta tags in the document head.
 export const setLinks = ({
@@ -16,9 +16,6 @@ export const setLinks = ({
   STYLES = companyStyles,
   styles = STYLES
 }) => {
-  // Get head node.
-  const head = getHead();
-
   // Set links.
   let link;
 
