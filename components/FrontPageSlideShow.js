@@ -1,9 +1,6 @@
-// Extend generic HTMLElement interface
+// Extend generic HTMLElement interface.
 export class FrontPageSlideShow extends HTMLElement {
-  #shadowRoot;
-  #styleNode;
-  #slotNode;
-
+  // Constructor.
   constructor() {
     super();
 
@@ -11,11 +8,11 @@ export class FrontPageSlideShow extends HTMLElement {
     template || (template = createTemplate());
 
     // Attach shadow DOM to element.
-    const shadow = this.#shadowRoot = this.attachShadow({mode: 'open'});
+    const shadow = this.attachShadow({mode: 'open'});
     shadow.appendChild(template.cloneNode(true));
 
-    this.#styleNode = shadow.childNodes[0];
-    const children = (this.#slotNode = shadow.childNodes[1]).assignedElements(),
+    // Get slotted content and create animation.
+    const children = shadow.childNodes[1].assignedElements(),
       [t, u = 'ms'] = (this.getAttribute('ms') || this.getAttribute('time') || '10000').split(/(ms|s)/),
       ms = parseFloat(t) * (u.trim().toLowerCase() === 's' && 1000 || 1),
       l = children.length;
@@ -31,6 +28,7 @@ export class FrontPageSlideShow extends HTMLElement {
       ) || (c.style.opacity = 0);
     }
 
+    // Rotate slides.
     setInterval(() => {
       const cur = children[index],
         next = children[index = (index + 1) % l];
@@ -46,6 +44,8 @@ export class FrontPageSlideShow extends HTMLElement {
 let template;
 const createTemplate = () => {
   const template = document.createDocumentFragment();
+
+  // Style.
   template.appendChild(document.createElement('style')).innerHTML = `
   :host {
     position: relative;
@@ -54,7 +54,11 @@ const createTemplate = () => {
     display: block;
   }
   `;
+
+  // Content.
   template.appendChild(document.createElement('slot'));
+
+  // Output.
   return template;
 }
 

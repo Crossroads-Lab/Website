@@ -1,11 +1,6 @@
-// Extend generic HTMLElement interface
+// Extend generic HTMLElement interface.
 export class FrontPage extends HTMLElement {
-  #shadowRoot;
-  #styleNode;
-  #headlineNode;
-  #descriptionNode;
-  #linkNode;
-
+  // Constructor.
   constructor() {
     super();
 
@@ -13,15 +8,18 @@ export class FrontPage extends HTMLElement {
     template || (template = createTemplate());
 
     // Attach shadow DOM to element.
-    const shadow = this.#shadowRoot = this.attachShadow({mode: 'open'});
-    shadow.appendChild(template.cloneNode(true));
-    this.#styleNode = shadow.childNodes[0];
-    const style = this.#styleNode = shadow.childNodes[0],
-    headline = this.#headlineNode = shadow.childNodes[1],
-    description = this.#descriptionNode = shadow.childNodes[2],
-    link = this.#linkNode = shadow.childNodes[3];
+    const shadow = this.attachShadow({mode: 'open'});
 
-    // Get properties.
+    // Attach template to shadow DOM.
+    shadow.appendChild(template.cloneNode(true));
+
+    // Get individual components.
+    const style = shadow.childNodes[0],
+    headline = shadow.childNodes[1],
+    description = shadow.childNodes[2],
+    link = shadow.childNodes[3];
+
+    // Get properties and set attributes.
     this.setAttribute('title', 'Welcome to Crossroads Venture Studio, the venture that incubate your ideas');
     headline.setAttribute('title', headline.innerHTML = this.getAttribute('headline'));
     description.setAttribute('title', description.innerHTML = this.getAttribute('description'));
@@ -59,10 +57,12 @@ export class FrontPage extends HTMLElement {
     }`);
   }
 
+  // Helper function to start background animation.
   startAnimation() {
     this.classList.add('anim');
   }
 
+  // Helper function to cancel background animation.
   cancelAnimation() {
     this.classList.remove('anim');
   }
@@ -72,6 +72,8 @@ export class FrontPage extends HTMLElement {
 let template;
 const createTemplate = () => {
   const template = document.createDocumentFragment();
+
+  // Style.
   template.appendChild(document.createElement('style')).innerHTML = `
   :host {
     position: relative;
@@ -152,9 +154,13 @@ const createTemplate = () => {
     }
   }
   `;
+
+  // Content.
   template.appendChild(document.createElement('h1'));
   template.appendChild(document.createElement('h2'));
   template.appendChild(document.createElement('a'));
+
+  // Output.
   return template;
 }
 
@@ -169,6 +175,7 @@ const createKeyframes = input => Object.defineProperty(input || {}, 'toString', 
   }
 });
 
+// Define keyframes.
 const keyframes = [
   createKeyframes({
     from: {
