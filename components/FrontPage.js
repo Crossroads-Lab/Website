@@ -10,11 +10,11 @@ export class FrontPage extends HTMLElement {
     super();
 
     // Create template if needed.
-    FrontPage.template || (FrontPage.template = FrontPage.createTemplate());
+    template || (template = createTemplate());
 
-    // Attach shadow DOM to element
+    // Attach shadow DOM to element.
     const shadow = this.#shadowRoot = this.attachShadow({mode: 'open'});
-    shadow.appendChild(FrontPage.template.cloneNode(true));
+    shadow.appendChild(template.cloneNode(true));
     this.#styleNode = shadow.childNodes[0];
     const style = this.#styleNode = shadow.childNodes[0],
     headline = this.#headlineNode = shadow.childNodes[1],
@@ -31,7 +31,7 @@ export class FrontPage extends HTMLElement {
     target && target !== 'undefined' && target !== 'null' || (target = '_blank');
     link.setAttribute('target', target);
     style.sheet.insertRule(`@keyframes background {
-      ${FrontPage.keyframes[~~(Math.random() * FrontPage.keyframes.length)]}
+      ${keyframes[~~(Math.random() * keyframes.length)]}
     }`);
     style.sheet.insertRule(`
     :host:before {
@@ -69,7 +69,8 @@ export class FrontPage extends HTMLElement {
 }
 
 // Template.
-FrontPage.createTemplate = () => {
+let template;
+const createTemplate = () => {
   const template = document.createDocumentFragment();
   template.appendChild(document.createElement('style')).innerHTML = `
   :host {
@@ -157,7 +158,8 @@ FrontPage.createTemplate = () => {
   return template;
 }
 
-FrontPage.createKeyframes = input => Object.defineProperty(input || {}, 'toString', {
+// Helper function to create keyframe.
+const createKeyframes = input => Object.defineProperty(input || {}, 'toString', {
   value: function() {
     return Object.entries(this).map(([key, value]) => (
       `${key} {\n${
@@ -167,8 +169,8 @@ FrontPage.createKeyframes = input => Object.defineProperty(input || {}, 'toStrin
   }
 });
 
-FrontPage.keyframes = [
-  FrontPage.createKeyframes({
+const keyframes = [
+  createKeyframes({
     from: {
       transform: 'scale(1.1)'
     },
@@ -176,7 +178,7 @@ FrontPage.keyframes = [
       transform: 'none'
     }
   }),
-  FrontPage.createKeyframes({
+  createKeyframes({
     from: {
       transform: 'scale(1.1)',
       'transform-origin': 'top left'
@@ -185,7 +187,7 @@ FrontPage.keyframes = [
       transform: 'none'
     }
   }),
-  FrontPage.createKeyframes({
+  createKeyframes({
     from: {
       transform: 'scale(1.1)',
       'transform-origin': 'top right'
@@ -194,7 +196,7 @@ FrontPage.keyframes = [
       transform: 'none'
     }
   }),
-  FrontPage.createKeyframes({
+  createKeyframes({
     from: {
       transform: 'scale(1.1)',
       'transform-origin': 'bottom left'
@@ -203,7 +205,7 @@ FrontPage.keyframes = [
       transform: 'none'
     }
   }),
-  FrontPage.createKeyframes({
+  createKeyframes({
     from: {
       transform: 'scale(1.1)',
       'transform-origin': 'bottom right'

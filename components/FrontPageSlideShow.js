@@ -8,11 +8,11 @@ export class FrontPageSlideShow extends HTMLElement {
     super();
 
     // Create template if needed.
-    FrontPageSlideShow.template || (FrontPageSlideShow.template = FrontPageSlideShow.createTemplate());
+    template || (template = createTemplate());
 
     // Attach shadow DOM to element.
     const shadow = this.#shadowRoot = this.attachShadow({mode: 'open'});
-    shadow.appendChild(FrontPageSlideShow.template.cloneNode(true));
+    shadow.appendChild(template.cloneNode(true));
 
     this.#styleNode = shadow.childNodes[0];
     this.#slotNode = shadow.childNodes[1];
@@ -44,7 +44,8 @@ export class FrontPageSlideShow extends HTMLElement {
 }
 
 // Template.
-FrontPageSlideShow.createTemplate = () => {
+let template;
+const createTemplate = () => {
   const template = document.createDocumentFragment();
   template.appendChild(document.createElement('style')).innerHTML = `
   :host {
