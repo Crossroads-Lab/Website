@@ -1,2 +1,2 @@
-export { default as FrontPage } from './FrontPage';
-export { default as FrontPageSlideShow } from './FrontPageSlideShow';
+export { default as FrontPage } from './FrontPage.js';
+export { default as FrontPageSlideShow } from './FrontPageSlideShow.js';
