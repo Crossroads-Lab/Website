@@ -77,9 +77,8 @@ const createTemplate = () => {
   template.appendChild(document.createElement('style')).innerHTML = `
   :host {
     position: relative;
-    width: 100%;
-    height: 100%;
-
+    width: var(--viewport-width);
+    height: var(--viewport-height);
     display: flex;
     flex-direction: column;
     gap: var(--text-gap-2x);
