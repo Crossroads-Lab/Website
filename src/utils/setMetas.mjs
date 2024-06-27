@@ -26,10 +26,16 @@ export const setMetas = ({
   viewport = 'width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover, user-scalable=no'
 } = {}) => {
   // Set title.
-  title && ((head.title || head.appendChild(document.createElement('title'))).innerHTML = title);
+  title && (
+    head.appendChild(document.createComment('TITLE')),
+    (head.title || head.appendChild(document.createElement('title'))).innerHTML = title
+  );
   
   // Set basic meta.
   let meta;
+  (charset || viewport || title || content || img) && (
+    head.appendChild(document.createComment('METATAGS'))
+  );
   
   // Set charset.
   charset && (

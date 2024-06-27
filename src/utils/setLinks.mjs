@@ -19,6 +19,8 @@ export const setLinks = ({
   // Set links.
   let link;
 
+  (favicon || styles) && head.appendChild(document.createComment('LINKS'));
+
   favicon && (
     link = head.appendChild(document.createElement('link')),
     link.setAttribute('rel', 'shortcut icon'),
