@@ -15,7 +15,6 @@ export class FrontPageSlideShow extends HTMLElement {
     shadow.appendChild(template.cloneNode(true));
 
     this.#styleNode = shadow.childNodes[0];
-    this.#slotNode = shadow.childNodes[1];
     const children = (this.#slotNode = shadow.childNodes[1]).assignedElements(),
       [t, u = 'ms'] = (this.getAttribute('ms') || this.getAttribute('time') || '10000').split(/(ms|s)/),
       ms = parseFloat(t) * (u.trim().toLowerCase() === 's' && 1000 || 1),
