@@ -17,10 +17,11 @@ top-navbar {
   display: block;
   position: fixed;
   width: 100%;
-  min-height: calc(var(--size-48-64) + var(--safearea-top));
+  --_padding-top: calc(var(--safearea-top) + var(--padding));
+  min-height: calc(var(--size-48-64) + var(--_padding-top));
   display: flex;
   align-items: center;
-  padding: var(--safearea-top) var(--padding-horizontal) 0 var(--padding-horizontal);
+  padding: var(--_padding-top) var(--padding-horizontal) 0 var(--padding-horizontal);
   opacity: 1 !important;
   z-index: calc(var(--z-index-max) - 1);
 
@@ -42,11 +43,11 @@ body:not([data-scrolling='true']) top-navbar {
   -moz-backdrop-filter: none;
   backdrop-filter: none;
   filter: none;
-  background: linear-gradient(0deg, #00000000, #00000000, #000000);
+  background: linear-gradient(0deg, #00000000 75%, #000000 100%);
 }
 
 @media (hover: hover) and (pointer: fine), (-ms-high-contrast: active), (forced-colors: active) {
   body:not([data-scrolling='true']) top-navbar {
-    background: linear-gradient(0deg, #00000000, #00000000, #000000);
+    background: none;
   }
 }
