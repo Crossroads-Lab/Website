@@ -36,6 +36,7 @@ export class FrontPageSlideShow extends HTMLElement {
       setTimeout(() => cur.cancelAnimation(), (~~ms) >> 1);
       next.style.opacity = 1;
       next.startAnimation();
+      setTimeout(() => cur.style.transition = next.style.transition = null, 3100);
     }, ms);
   }
 }

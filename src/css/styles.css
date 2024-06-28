@@ -2,7 +2,7 @@
 @import './theme.css';
 
 :root {
-  --padding-horizontal: max(var(--padding-2x), 10 * var(--vw));
+  --padding-horizontal: var(--padding-width-90-percent);
   --padding-vertical: var(--padding-2x);
 }
 
@@ -15,6 +15,7 @@ html, body, * {
 nav {
   position: fixed;
   width: 100%;
+  height: var(--size-48-64);
   display: flex;
   align-items: center;
   padding: var(--padding) var(--padding-horizontal);
