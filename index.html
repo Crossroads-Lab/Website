@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script src="src/utils/initHead.mjs" type="module"></script>
+    <script src="src/scripts/initHead.mjs" type="module"></script>
+    <script src="src/scripts/createContent.mjs" type="module" defer></script>
 
     <!-- Modules -->
     <script src="src/components/index.mjs" type="module"></script>
   </head>
   <body>
     <nav>
-      <img src="assets/logos/logo-full-color.svg" class="icon"/>
+      <a class="link cursor-n-resize" href="front-page-slide-show">
+        <img src="assets/logos/logo-full-color.svg" class="icon"/>
+      </a>
     </nav>
-    <front-page-slide-show
-    >
-      <front-page
+    <front-page-slide-show id="front-page-slide-show">
+      <!-- <front-page
         headline="At the crossroads of innovation and technology"
         description="The venture studio that transform your ideas into reality"
         link="Co-found with us"
@@ -58,7 +60,7 @@
         description="Time for you to be part of the next generation of entrepreneurs"
         link="Co-found with us"
         background="background-6.jpg"
-      ></front-page>
+      ></front-page> -->
     </front-page-slide-show>
   </body>
 </html>
