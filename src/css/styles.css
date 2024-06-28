@@ -21,4 +21,20 @@ nav {
   padding: var(--padding) var(--padding-horizontal);
   opacity: 1 !important;
   z-index: calc(var(--z-index-max) - 1);
+  transition: 1s;
+
+  /* When scrolling */
+  background: #000000A0;
+  --_blur: 15px;
+  -webkit-backdrop-filter: blur(var(--_blur));
+  -moz-backdrop-filter: blur(var(--_blur));
+  backdrop-filter: blur(var(--_blur));
+}
+
+body:not([data-scrolling='true']) nav {
+  -webkit-backdrop-filter: none;
+  -moz-backdrop-filter: none;
+  backdrop-filter: none;
+  filter: none;
+  background: none;
 }
