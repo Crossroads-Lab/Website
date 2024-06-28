@@ -1,6 +1,11 @@
 // Imports.
 import { COMPANY_INFORMATION, LINKS } from '../data/index.mjs';
-import { addLink, addMetaTag, addTitle } from 'https://crossroads-lab.github.io/Client/src/index.mjs';
+import {
+  addLink,
+  addMetaTag,
+  addTitle,
+  getScriptNode
+} from 'https://crossroads-lab.github.io/Client/src/index.mjs';
 
 // Add title to head.
 addTitle(COMPANY_INFORMATION.NAME);
@@ -23,4 +28,4 @@ css && addLink({href: css, rel: 'stylesheet', type: 'text/css'});
 const favicon = LINKS.FAVICON || LINKS.ICON;
 favicon && addLink({href: favicon, rel: 'shortcut icon', type: 'image/x-icon'});
 
-console.log('initHead', document.currentScript);
+console.log('createContent', getScriptNode());
