@@ -32,9 +32,12 @@ export class FrontPage extends HTMLElement {
       ${keyframes[~~(Math.random() * keyframes.length)]}
     }`);
     style.sheet.insertRule(`
-    div:before {
+    :host:before {
       content: ' ';
       display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
       height: 100%;
       opacity: 0.5;
@@ -42,10 +45,13 @@ export class FrontPage extends HTMLElement {
       background-position: ${this.getAttribute('position') || 'center'};
       background-repeat: no-repeat;
       background-size: cover;
-    }`);
+      z-index: 0;
+      overflow: hidden;
+    }
+    `);
 
     style.sheet.insertRule(`    
-    :host(.anim) div:before {
+    :host(.anim):before {
       animation: background 20s;
       transition: 1s;
     }`);
@@ -78,22 +84,14 @@ const createTemplate = () => {
     gap: var(--text-gap-2x);
     align-items: flex-start;
     justify-content: flex-end;
-    /*padding-top: var(--padding-2x);
+    padding-top: var(--padding-2x);
     padding-left: max(var(--padding-2x), 10 * var(--vw));
     padding-bottom: var(--padding-2x);
-    padding-right: max(var(--padding-2x), 20 * var(--vw));*/
+    padding-right: max(var(--padding-2x), 20 * var(--vw));
     overflow: hidden !important;
   }
 
-  div {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-    overflow: hidden;
-  }
-
-  *:not(div) {
+  * {
     color: var(--light);
     z-index: 1;
   }
@@ -160,7 +158,6 @@ const createTemplate = () => {
   template.appendChild(document.createElement('h1'));
   template.appendChild(document.createElement('h2'));
   template.appendChild(document.createElement('a'));
-  template.appendChild(document.createElement('div'));
 
   // Output.
   return template;
