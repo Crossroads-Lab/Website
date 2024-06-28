@@ -28,4 +28,4 @@ css && addLink({href: css, rel: 'stylesheet', type: 'text/css'});
 const favicon = LINKS.FAVICON || LINKS.ICON;
 favicon && addLink({href: favicon, rel: 'shortcut icon', type: 'image/x-icon'});
 
-console.log('createContent', getScriptNode());
+console.log('initHead', getScriptNode());
