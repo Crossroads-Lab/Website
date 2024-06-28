@@ -1,5 +1,5 @@
 import { FRONT_PAGE_SLIDE_SHOW_CONTENT } from '../data/index.mjs';
-import { removeScriptNode } from 'https://crossroads-lab.github.io/Client/src/index.mjs';
+import { removeScriptNode, style } from 'https://crossroads-lab.github.io/Client/src/index.mjs';
 
 document.getElementById('front-page-slide-show').innerHTML
   = FRONT_PAGE_SLIDE_SHOW_CONTENT.map(props => props && (
@@ -9,4 +9,5 @@ document.getElementById('front-page-slide-show').innerHTML
   )
 ).join('\n');
 
-console.log('removed createContent', removeScriptNode(import.meta.url));
+style.innerHTML.replace(/\s+/g, '') || style.remove();
+removeScriptNode(import.meta.url);
