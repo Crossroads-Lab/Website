@@ -1,5 +1,5 @@
 import { FRONT_PAGE_SLIDE_SHOW_CONTENT } from '../data/index.mjs';
-import { getScriptNode } from 'https://crossroads-lab.github.io/Client/src/index.mjs';
+import { removeScriptNode } from 'https://crossroads-lab.github.io/Client/src/index.mjs';
 
 document.getElementById('front-page-slide-show').innerHTML
   = FRONT_PAGE_SLIDE_SHOW_CONTENT.map(props => props && (
