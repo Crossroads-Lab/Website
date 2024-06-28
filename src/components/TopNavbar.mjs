@@ -14,7 +14,8 @@ export class TopNavbar extends HTMLElement {
     if (logoSrc) {
       const link = this.appendChild(document.createElement('a')),
       img = link.appendChild(document.createElement('img'));
-      link.classList.add('link cursor-n-resize');
+      link.classList.add('link');
+      link.classList.add('cursor-n-resize');
       link.setAttribute('href', this.getAttribute('logo-href') || '#');
       link.setAttribute('title', this.getAttribute('logo-title') || 'Logo');
       img.setAttribute('src', logoSrc);
