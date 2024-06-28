@@ -78,10 +78,10 @@ const createTemplate = () => {
     gap: var(--text-gap-2x);
     align-items: flex-start;
     justify-content: flex-end;
-    padding-top: var(--padding-2x);
+    /*padding-top: var(--padding-2x);
     padding-left: max(var(--padding-2x), 10 * var(--vw));
     padding-bottom: var(--padding-2x);
-    padding-right: max(var(--padding-2x), 20 * var(--vw));
+    padding-right: max(var(--padding-2x), 20 * var(--vw));*/
     overflow: hidden !important;
   }
 
