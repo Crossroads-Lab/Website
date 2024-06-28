@@ -77,10 +77,15 @@ const createTemplate = () => {
   template.appendChild(document.createElement('style')).innerHTML = `
   :host {
     position: relative;
+    overflow: hidden !important;
+  }
+
+  div {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    max-width: 100%;
-    max-height: 100%;
     display: flex;
     flex-direction: column;
     gap: var(--text-gap-2x);
@@ -90,7 +95,6 @@ const createTemplate = () => {
     padding-left: max(var(--padding-2x), 10 * var(--vw));
     padding-bottom: var(--padding-2x);
     padding-right: max(var(--padding-2x), 20 * var(--vw));
-    overflow: hidden !important;
   }
 
   * {
@@ -157,9 +161,10 @@ const createTemplate = () => {
   `;
 
   // Content.
-  template.appendChild(document.createElement('h1'));
-  template.appendChild(document.createElement('h2'));
-  template.appendChild(document.createElement('a'));
+  const div = template.appendChild(document.createElement('div'));
+  div.appendChild(document.createElement('h1'));
+  div.appendChild(document.createElement('h2'));
+  div.appendChild(document.createElement('a'));
 
   // Output.
   return template;
