@@ -205,6 +205,15 @@ const keyframes = [
   createKeyframes({
     from: {
       transform: 'scale(1.1)',
+      'transform-origin': 'top'
+    },
+    to: {
+      transform: 'none'
+    }
+  }),
+  createKeyframes({
+    from: {
+      transform: 'scale(1.1)',
       'transform-origin': 'bottom left'
     },
     to: {
@@ -215,6 +224,33 @@ const keyframes = [
     from: {
       transform: 'scale(1.1)',
       'transform-origin': 'bottom right'
+    },
+    to: {
+      transform: 'none'
+    }
+  }),
+  createKeyframes({
+    from: {
+      transform: 'scale(1.1)',
+      'transform-origin': 'bottom'
+    },
+    to: {
+      transform: 'none'
+    }
+  }),
+  createKeyframes({
+    from: {
+      transform: 'scale(1.1)',
+      'transform-origin': 'left'
+    },
+    to: {
+      transform: 'none'
+    }
+  }),
+  createKeyframes({
+    from: {
+      transform: 'scale(1.1)',
+      'transform-origin': 'right'
     },
     to: {
       transform: 'none'
