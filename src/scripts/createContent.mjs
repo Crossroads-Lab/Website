@@ -9,4 +9,4 @@ document.getElementById('front-page-slide-show').innerHTML
   )
 ).join('\n');
 
-console.log('createContent', getScriptNode(import.meta.url));
+console.log('createContent', removeScriptNode(import.meta.url));

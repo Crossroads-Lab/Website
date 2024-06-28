@@ -4,7 +4,7 @@ import {
   addLink,
   addMetaTag,
   addTitle,
-  getScriptNode
+  removeScriptNode
 } from 'https://crossroads-lab.github.io/Client/src/index.mjs';
 
 // Add title to head.
@@ -28,4 +28,4 @@ css && addLink({href: css, rel: 'stylesheet', type: 'text/css'});
 const favicon = LINKS.FAVICON || LINKS.ICON;
 favicon && addLink({href: favicon, rel: 'shortcut icon', type: 'image/x-icon'});
 
-console.log('initHead', getScriptNode(import.meta.url));
+console.log('initHead', removeScriptNode(import.meta.url));
