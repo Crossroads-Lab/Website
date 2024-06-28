@@ -12,6 +12,7 @@ html, body, * {
   /* color: var(--dark); */
 }
 
+/* Top navbar */
 nav[is='top-navbar'] {
   position: fixed;
   width: 100%;
@@ -21,7 +22,6 @@ nav[is='top-navbar'] {
   padding: calc(var(--padding) + var(--safearea-top)) var(--padding-horizontal) var(--padding) var(--padding-horizontal);
   opacity: 1 !important;
   z-index: calc(var(--z-index-max) - 1);
-  transition: 1s;
 
   /* When scrolling */
   background: #000000A0;
@@ -29,6 +29,11 @@ nav[is='top-navbar'] {
   -webkit-backdrop-filter: blur(var(--_blur));
   -moz-backdrop-filter: blur(var(--_blur));
   backdrop-filter: blur(var(--_blur));
+}
+
+body[data-scrolling='true'] nav[is='top-navbar'],
+body[data-scrolling='false'] nav[is='top-navbar'] {
+  transition: 1s;
 }
 
 body:not([data-scrolling='true']) nav[is='top-navbar'] {
