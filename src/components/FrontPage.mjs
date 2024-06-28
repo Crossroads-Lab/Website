@@ -28,8 +28,15 @@ export class FrontPage extends HTMLElement {
     href && href !== 'undefined' && href !== 'null' && link.setAttribute('href', href);
     target && target !== 'undefined' && target !== 'null' || (target = '_blank');
     link.setAttribute('target', target);
+    let kf = this.getAttribute('anim')
+      || this.getAttribute('animation')
+      || this.getAttribute('keyframes');
+    kf && (kf = kf[keyframe]) || (
+      kf = Object.values(keyframes),
+      kf = kf[~~(Math.random() * kf.length)]
+    );
     style.sheet.insertRule(`@keyframes background {
-      ${keyframes[~~(Math.random() * keyframes.length)]}
+      ${kf}
     }`);
     style.sheet.insertRule(`
     :host:before {
@@ -175,8 +182,8 @@ const createKeyframes = input => Object.defineProperty(input || {}, 'toString', 
 });
 
 // Define keyframes.
-const keyframes = [
-  createKeyframes({
+const keyframes = {
+  'zoom-out': createKeyframes({
     from: {
       transform: 'scale(1.1)'
     },
@@ -184,7 +191,7 @@ const keyframes = [
       transform: 'none'
     }
   }),
-  createKeyframes({
+  'zoom-out-top-left': createKeyframes({
     from: {
       transform: 'scale(1.1)',
       'transform-origin': 'top left'
@@ -193,7 +200,7 @@ const keyframes = [
       transform: 'none'
     }
   }),
-  createKeyframes({
+  'zoom-out-top-right': createKeyframes({
     from: {
       transform: 'scale(1.1)',
       'transform-origin': 'top right'
@@ -202,7 +209,7 @@ const keyframes = [
       transform: 'none'
     }
   }),
-  createKeyframes({
+  'zoom-out-top': createKeyframes({
     from: {
       transform: 'scale(1.1)',
       'transform-origin': 'top'
@@ -211,7 +218,7 @@ const keyframes = [
       transform: 'none'
     }
   }),
-  createKeyframes({
+  'zoom-out-bottom-left': createKeyframes({
     from: {
       transform: 'scale(1.1)',
       'transform-origin': 'bottom left'
@@ -220,7 +227,7 @@ const keyframes = [
       transform: 'none'
     }
   }),
-  createKeyframes({
+  'zoom-out-bottom-right': createKeyframes({
     from: {
       transform: 'scale(1.1)',
       'transform-origin': 'bottom right'
@@ -229,7 +236,7 @@ const keyframes = [
       transform: 'none'
     }
   }),
-  createKeyframes({
+  'zoom-out-bottom': createKeyframes({
     from: {
       transform: 'scale(1.1)',
       'transform-origin': 'bottom'
@@ -238,7 +245,7 @@ const keyframes = [
       transform: 'none'
     }
   }),
-  createKeyframes({
+  'zoom-out-left': createKeyframes({
     from: {
       transform: 'scale(1.1)',
       'transform-origin': 'left'
@@ -247,7 +254,7 @@ const keyframes = [
       transform: 'none'
     }
   }),
-  createKeyframes({
+  'zoom-out-right': createKeyframes({
     from: {
       transform: 'scale(1.1)',
       'transform-origin': 'right'
@@ -256,7 +263,7 @@ const keyframes = [
       transform: 'none'
     }
   })
-];
+};
 
 // Default export.
 export default FrontPage;
