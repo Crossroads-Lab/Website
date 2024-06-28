@@ -9,7 +9,8 @@ export const FRONT_PAGE_SLIDE_SHOW_CONTENT = [
     headline: 'Your project, our execution',
     description: 'You focus on the product while we take care of the development and the launch',
     link: 'Co-found with us',
-    background: 'background-1.jpg'
+    background: 'background-1.jpg',
+    position: 'top left'
   },
   {
     headline: 'The venture studio that has your back',
