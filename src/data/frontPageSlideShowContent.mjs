@@ -33,7 +33,7 @@ export const FRONT_PAGE_SLIDE_SHOW_CONTENT = [
     description: 'The easiest and fastest way to create a new AI tech venture',
     link: 'Co-found with us',
     background: 'background-4.png',
-    animation: 'zoom-out-bottom'
+    animation: 'zoom-out'
   },
   {
     headline: 'Are you ready?',
