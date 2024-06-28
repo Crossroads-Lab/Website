@@ -12,7 +12,7 @@ html, body, * {
   /* color: var(--dark); */
 }
 
-nav {
+nav[is='top-navbar'] {
   position: fixed;
   width: 100%;
   height: var(--size-48-64);
@@ -31,7 +31,7 @@ nav {
   backdrop-filter: blur(var(--_blur));
 }
 
-body:not([data-scrolling='true']) nav {
+body:not([data-scrolling='true']) nav[is='top-navbar'] {
   -webkit-backdrop-filter: none;
   -moz-backdrop-filter: none;
   backdrop-filter: none;
