@@ -16,10 +16,10 @@ html, body, * {
 nav[is='top-navbar'] {
   position: fixed;
   width: 100%;
-  height: var(--size-48-64);
+  min-height: var(--size-48-64);
   display: flex;
   align-items: center;
-  padding: var(--safearea-top) var(--padding-horizontal) 0 var(--padding-horizontal);
+  padding: calc(var(--safearea-top) + var(--padding-2x)) var(--padding-horizontal) 0 var(--padding-horizontal);
   opacity: 1 !important;
   z-index: calc(var(--z-index-max) - 1);
 
