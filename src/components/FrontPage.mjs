@@ -31,7 +31,7 @@ export class FrontPage extends HTMLElement {
     let kf = this.getAttribute('anim')
       || this.getAttribute('animation')
       || this.getAttribute('keyframes');
-    kf && (kf = kf[keyframe]) || (
+    kf && (kf = keyframes[kf]) || (
       kf = Object.values(keyframes),
       kf = kf[~~(Math.random() * kf.length)]
     );
