@@ -6,13 +6,11 @@ export class TopNavbar extends HTMLElement {
   // Constructor.
   constructor() {
     super();
-    console.log('constructor ->', this.getAttribute('logo-src') || LOGO);
   }
 
   // Add elements to the component.
   connectedCallback() {
     const logoSrc = this.getAttribute('logo-src') || LOGO;
-    console.log('connectedCallback ->', logoSrc);
     if (logoSrc) {
       const link = this.appendChild(document.createElement('a')),
       img = link.appendChild(document.createElement('img'));
@@ -30,4 +28,4 @@ export class TopNavbar extends HTMLElement {
 export default TopNavbar;
 
 // Register component.
-customElements.define('top-navbar', TopNavbar, { extends: 'nav' });
+customElements.define('top-navbar', TopNavbar);

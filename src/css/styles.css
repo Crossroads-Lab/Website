@@ -13,7 +13,8 @@ html, body, * {
 }
 
 /* Top navbar */
-nav[is='top-navbar'] {
+top-navbar {
+  display: block;
   position: fixed;
   width: 100%;
   min-height: calc(var(--size-48-64) + var(--safearea-top));
@@ -31,12 +32,12 @@ nav[is='top-navbar'] {
   backdrop-filter: blur(var(--_blur));
 }
 
-body[data-scrolling='true'] nav[is='top-navbar'],
-body[data-scrolling='false'] nav[is='top-navbar'] {
+body[data-scrolling='true'] top-navbar,
+body[data-scrolling='false'] top-navbar {
   transition: 1s;
 }
 
-body:not([data-scrolling='true']) nav[is='top-navbar'] {
+body:not([data-scrolling='true']) top-navbar {
   -webkit-backdrop-filter: none;
   -moz-backdrop-filter: none;
   backdrop-filter: none;
