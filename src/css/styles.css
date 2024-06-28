@@ -17,7 +17,7 @@ top-navbar {
   display: block;
   position: fixed;
   width: 100%;
-  --_padding-top: calc(var(--safearea-top) + var(--padding));
+  --_padding-top: calc(var(--safearea-top) + var(--padding-half));
   min-height: calc(var(--size-48-64) + var(--_padding-top));
   display: flex;
   align-items: center;
