@@ -13,7 +13,7 @@ addTitle({title: COMPANY_INFORMATION.NAME, comment: 'Document title'});
 // Add default meta tags, i.e. charset and viewport.
 addMetaTag({charset: 'utf-8', comment: 'Default meta tags'});
 addMetaTag({name: 'viewport', content: 'width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover, user-scalable=no'});
-addMetaTag({name: 'theme-color', content: 'transparent'});
+addMetaTag({name: 'theme-color', content: '#000000'});
 
 // Add SEO | Open Graph meta tags.
 COMPANY_INFORMATION.NAME && addMetaTag({property: 'og:title', content: COMPANY_INFORMATION.NAME, comment: 'SEO | Open Graph meta tags'});
