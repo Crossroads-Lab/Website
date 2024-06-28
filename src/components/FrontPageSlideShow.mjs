@@ -23,6 +23,7 @@ export class FrontPageSlideShow extends HTMLElement {
       c.style.top = c.style.left = 0;
       i === index && (
         c.startAnimation(),
+        c.style.transition = null,
         c.style.opacity = 1
       ) || (c.style.opacity = 0);
     }
