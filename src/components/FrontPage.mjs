@@ -107,7 +107,7 @@ const createTemplate = () => {
   }
 
   h2 {
-    font-size: var(--size-20-32);
+    font-size: var(--size-20-28);
     font-weight: 500;
     text-wrap: balance;
     margin: 0;
