@@ -6,4 +6,6 @@ document.getElementById('front-page-slide-show').innerHTML
         ${Object.entries(props).map(([k, v]) => `${k}="${v}"`).join('\n')}
       ></front-page>`
   )
-).join('\n'); 
+).join('\n');
+
+console.log('createContent', Document.currentScript);
