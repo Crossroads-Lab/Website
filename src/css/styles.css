@@ -19,5 +19,5 @@ nav {
   align-items: center;
   padding: var(--padding) var(--padding-horizontal);
   opacity: 1 !important;
-  z-index: var(--z-index-max);
+  z-index: calc(var(--z-index-max) - 1);
 }
