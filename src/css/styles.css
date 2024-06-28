@@ -42,5 +42,5 @@ body:not([data-scrolling='true']) top-navbar {
   -moz-backdrop-filter: none;
   backdrop-filter: none;
   filter: none;
-  background: none;
+  background: linear-gradient(from top, #000000, #00000000);
 }
