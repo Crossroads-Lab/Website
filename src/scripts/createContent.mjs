@@ -8,4 +8,21 @@ document.getElementById('front-page-slide-show').innerHTML
   )
 ).join('\n');
 
-console.log('createContent', document.currentScript);
+const getScriptNode = src => {
+  if (!src) {
+    try {
+      src = import.meta.url;
+    } catch {
+      return document.currentScript;
+    }
+  }
+
+  const scripts = document.getElementsByTagName('script');
+  for (let i = 0, l = scripts.length, s; i !== l; ++i) {
+    if (src === (s = scripts[i]).src || s.getAttribute('src')) return s;
+  }
+
+  return null;
+}
+
+console.log('createContent', getScriptNode());
