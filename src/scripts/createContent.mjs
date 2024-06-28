@@ -8,4 +8,4 @@ document.getElementById('front-page-slide-show').innerHTML
   )
 ).join('\n');
 
-console.log('createContent', Document.currentScript);
+console.log('createContent', document.currentScript);
