@@ -15,10 +15,9 @@ export class FrontPage extends HTMLElement {
 
     // Get individual components.
     const style = shadow.childNodes[0],
-      container = shadow.childNodes[1],
-      headline = container.childNodes[0],
-      description = container.childNodes[1],
-      link = container.childNodes[2];
+      headline = shadow.childNodes[1],
+      description = shadow.childNodes[2],
+      link = shadow.childNodes[3];
 
     // Get properties and set attributes.
     this.setAttribute('title', 'Welcome to Crossroads Venture Studio, the venture that incubate your ideas');
@@ -33,12 +32,9 @@ export class FrontPage extends HTMLElement {
       ${keyframes[~~(Math.random() * keyframes.length)]}
     }`);
     style.sheet.insertRule(`
-    :host:before {
+    div:before {
       content: ' ';
       display: block;
-      position: absolute;
-      top: 0;
-      left: 0;
       width: 100%;
       height: 100%;
       opacity: 0.5;
@@ -46,13 +42,10 @@ export class FrontPage extends HTMLElement {
       background-position: ${this.getAttribute('position') || 'center'};
       background-repeat: no-repeat;
       background-size: cover;
-      z-index: 0;
-      overflow: hidden;
-    }
-    `);
+    }`);
 
     style.sheet.insertRule(`    
-    :host(.anim):before {
+    :host(.anim) div:before {
       animation: background 20s;
       transition: 1s;
     }`);
@@ -78,13 +71,6 @@ const createTemplate = () => {
   template.appendChild(document.createElement('style')).innerHTML = `
   :host {
     position: relative;
-    overflow: hidden !important;
-  }
-
-  div {
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
     display: flex;
@@ -96,9 +82,18 @@ const createTemplate = () => {
     padding-left: max(var(--padding-2x), 10 * var(--vw));
     padding-bottom: var(--padding-2x);
     padding-right: max(var(--padding-2x), 20 * var(--vw));
+    overflow: hidden !important;
   }
 
-  * {
+  div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+  }
+
+  *:not(div) {
     color: var(--light);
     z-index: 1;
   }
@@ -162,10 +157,10 @@ const createTemplate = () => {
   `;
 
   // Content.
-  const div = template.appendChild(document.createElement('div'));
-  div.appendChild(document.createElement('h1'));
-  div.appendChild(document.createElement('h2'));
-  div.appendChild(document.createElement('a'));
+  template.appendChild(document.createElement('h1'));
+  template.appendChild(document.createElement('h2'));
+  template.appendChild(document.createElement('a'));
+  template.appendChild(document.createElement('div'));
 
   // Output.
   return template;
