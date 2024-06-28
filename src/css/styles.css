@@ -19,7 +19,7 @@ nav[is='top-navbar'] {
   height: var(--size-48-64);
   display: flex;
   align-items: center;
-  padding: calc(var(--padding) + var(--safearea-top)) var(--padding-horizontal) var(--padding) var(--padding-horizontal);
+  padding: var(--safearea-top) var(--padding-horizontal) 0 var(--padding-horizontal);
   opacity: 1 !important;
   z-index: calc(var(--z-index-max) - 1);
 
