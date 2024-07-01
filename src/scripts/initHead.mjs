@@ -29,4 +29,5 @@ css && addLink({href: css, rel: 'stylesheet', type: 'text/css', comment: 'Styles
 const favicon = LINKS.FAVICON || LINKS.ICON;
 favicon && addLink({href: favicon, rel: 'shortcut icon', type: 'image/x-icon', comment: 'Favicon'});
 
+// Remove script node.
 removeScriptNode(import.meta.url);
