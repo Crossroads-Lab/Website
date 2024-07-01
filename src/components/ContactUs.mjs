@@ -3,7 +3,7 @@ import {
   DESCRIPTION,
   LOGO,
   SOCIALS
-} from ('../data/companyInformation.mjs');
+} from '../data/companyInformation.mjs';
 
 // Extend generic HTMLElement interface.
 export class ContactUs extends HTMLElement {
