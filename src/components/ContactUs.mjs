@@ -4,6 +4,7 @@ import {
   LOGO,
   SOCIALS
 } from '../data/companyInformation.mjs';
+import LINKS from '../data/links.mjs';
 
 // Extend generic HTMLElement interface.
 export class ContactUs extends HTMLElement {
@@ -42,6 +43,12 @@ const createTemplate = () => {
     filter: saturate(1) brightness(1);
   }
   `;
+
+  // Linked style.
+  const externalStyle = template.appendChild(document.createElement('link'));
+  externalStyle.setAttribute('rel', 'stylesheet');
+  externalStyle.setAttribute('href', LINKS.CSS || LINKS.STYLES);
+  externalStyle.setAttribute('type', 'text/css');
 
   // Content.
   const logoLink = template.appendChild(document.createElement('a')),
