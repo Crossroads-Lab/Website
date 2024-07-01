@@ -46,9 +46,9 @@ const createTemplate = () => {
   // Content.
   const logoLink = template.appendChild(document.createElement('a')),
     logoImg = logoLink.appendChild(document.createElement('img')),
-    description = template.appendChild(document.createElement('div')),
+    description = template.appendChild(document.createElement('span')),
     socials = template.appendChild(document.createElement('div')),
-    copyright = template.appendChild(document.createElement('div'));
+    copyright = template.appendChild(document.createElement('span'));
 
   // Logo.
   logoLink.classList.add('link');
