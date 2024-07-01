@@ -20,6 +20,7 @@ export const SOCIALS = COMPANY_INFORMATION.SOCIALS = [
     src: 'https://crossroads-lab.github.io/Design-System/icons/socials/x-light.svg'
   }
 ];
+export const LOGO = TOP_NAVBAR_CONTENT.LOGO = 'assets/logos/logo-full-color.svg';
 export const CREATION_YEAR = COMPANY_INFORMATION.CREATION_YEAR = 2023;
 export const FAVICON = COMPANY_INFORMATION.FAVICON = 'assets/favicon.ico';
 export const STYLES = COMPANY_INFORMATION.STYLES = 'src/css/styles.css';
