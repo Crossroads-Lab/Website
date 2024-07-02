@@ -50,7 +50,7 @@ for (let i = 0, data = COMPANY_INFORMATION.SOCIALS || [], l = data.length, d, sr
 }
 for (let i = 0, data = FRONT_PAGE_SLIDE_SHOW_CONTENT || [], l = data.length, d, src; i !== l; ++i) {
   d = data[i];
-  src = d.src || d.background;
+  src = d.src || (d.background && `assets/backgrounds/${d.background}`);
   src && addLink({href: src, rel: 'preload', as: 'image'});
 }
 for (let i = 0, data = PARTNERS || [], l = data.length, d, src; i !== l; ++i) {
