@@ -151,9 +151,10 @@ const createTemplate = () => {
   }
   `;
 
-  template.appendChild(document.createElement('h1')).innerHTML = `
-    We made it <span class="capitalize color-purple-orange-diagonal">with you</span>
+  const title = template.appendChild(document.createElement('h1')).innerHTML = `
+    We made it <span class="text-transform-capitalize color-purple-orange-diagonal">happen</span> with <span class="text-transform-capitalize color-purple-orange-diagonal">you</span>
   `;
+  title.classList.add('text-transform-capitalize');
 
   const content = template.appendChild(document.createElement('div'));
 
