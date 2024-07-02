@@ -31,8 +31,8 @@ const createTemplate = () => {
   template.appendChild(document.createElement('style')).innerHTML = `
   :host {
     width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     gap: var(--gap-half);
@@ -41,15 +41,21 @@ const createTemplate = () => {
     padding: var(--padding) var(--padding-width-90-percent);
   }
 
-  a {
-    position: relative;
-    aspect-ratio: 1/1;
-  }
   a div {
     display: none;
   }
 
   @media (hover: hover) and (pointer: fine), (-ms-high-contrast: active), (forced-colors: active) {
+    :host {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
+
+    a {
+      position: relative;
+      aspect-ratio: 1/1;
+    }
+
     a div {
       display: flex;
       flex-direction: column;
