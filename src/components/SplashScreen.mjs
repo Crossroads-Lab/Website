@@ -34,12 +34,12 @@ const createTemplate = () => {
     align-items: center;
     justify-content: center;
     z-index: var(--z-index-max);
-    background: red;
+    background: blue;
     opacity: 1;
     pointer-events: auto;
-    transition: 3s;
   }
   :host(.hidden) {
+    transition: 3s;
     pointer-events: none;
     opacity: 0;
   }
