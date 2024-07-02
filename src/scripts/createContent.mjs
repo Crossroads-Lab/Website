@@ -14,5 +14,5 @@ document.getElementById('front-page-slide-show').innerHTML
 detectScroll();
 
 // Remove unecessary nodes.
-// style.innerHTML.replace(/\s+/g, '') || style.remove();
+style.innerHTML.replace(/\s+/g, '') || style.remove();
 removeScriptNode(import.meta.url);
