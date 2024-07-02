@@ -44,14 +44,14 @@ const createTemplate = () => {
     align-items: center;
     justify-content: center;
     z-index: var(--z-index-max);
-    background: blue;
+    background: black;
     opacity: 1;
     pointer-events: auto;
-    transition: 1s;
   }
   :host(.loaded) {
     pointer-events: none;
-    opacity: 0.5;
+    opacity: 0;
+    transition: 3s;
   }
   `;
 
