@@ -73,7 +73,7 @@ const createTemplate = () => {
   @media (hover: hover) and (pointer: fine), (-ms-high-contrast: active), (forced-colors: active) {
     :host > div {
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+      grid-template-columns: repeat( 5, minmax( 0, 1fr ) );
       gap: var(--gap-half);
     }
 
@@ -129,25 +129,25 @@ const createTemplate = () => {
 
   @media only screen and (max-width: 850px) {
     :host > div {
-      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-template-columns: repeat( 4, minmax( 0, 1fr ) );
     }
   }
 
   @media only screen and (max-width: 720px) {
     :host > div {
-      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-columns: repeat( 3, minmax( 0, 1fr ) );
     }
   }
 
   @media only screen and (max-width: 500px) {
     :host > div {
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat( 2, minmax( 0, 1fr ) );
     }
   }
 
   @media only screen and (max-width: 300px) {
     :host > div {
-      grid-template-columns: 1fr;
+      grid-template-columns: minmax( 0, 1fr );
     }
   }
   `;
