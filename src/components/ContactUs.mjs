@@ -86,6 +86,7 @@ const createTemplate = () => {
     link.setAttribute('target', '_blank');
     link.setAttribute('href', social.url || social.href || social.link);
     link.classList.add('link');
+    link.classList.add('icon-container');
     img.classList.add('icon');
     img.setAttribute('src', social.src, social.img || social.icon);
     img.setAttribute('alt', `${social.value || social.name || social.title || 'Social'} logo`);
