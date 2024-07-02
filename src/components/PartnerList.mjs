@@ -148,6 +148,7 @@ const createTemplate = () => {
     el = template.appendChild(document.createElement('a'));
     el.setAttribute('title', `Go to ${partner.title || name || href || 'partner\'s page'}`);
     href && (el.setAttribute('href', href));
+    el.setAttribute('target', '_blank');
     el.classList.add('xlarge');
     el.classList.add('link');
 
