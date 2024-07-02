@@ -89,7 +89,7 @@ const createTemplate = () => {
     link.classList.add('link');
     link.classList.add('icon-container');
     img.classList.add('icon');
-    img.setAttribute('src', social.src, social.img || social.icon || `https://crossroads-lab.github.io/Design-System/icons/socials/${n.tolowercase()}-light.svg`);
+    img.setAttribute('src', social.src, social.img || social.icon || `https://crossroads-lab.github.io/Design-System/icons/socials/${n.toLowerCase()}-light.svg`);
     img.setAttribute('alt', `${n || 'Social'} logo`);
   }
 
