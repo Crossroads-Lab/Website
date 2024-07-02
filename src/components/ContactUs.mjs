@@ -40,7 +40,7 @@ const createTemplate = () => {
     padding: var(--padding) var(--padding-width-90-percent);
   }
   img {
-    filter: saturate(1) brightness(1);
+    filter: saturate(0) brightness(1);
   }
   `;
 
