@@ -103,7 +103,7 @@ const createTemplate = () => {
       transform: scale(0.8);
       transition: var(--transition-time);
       z-index: 1;
-      border-radius: 32px;
+      border-radius: 16px;
     }
     a div span {
       color: var(--dark);
@@ -127,7 +127,7 @@ const createTemplate = () => {
     }
   }
 
-  @media only screen and (max-width: 850px) {
+  @media only screen and (max-width: 900px) {
     :host > div {
       grid-template-columns: repeat( 4, minmax( 0, 1fr ) );
     }
