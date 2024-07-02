@@ -11,14 +11,14 @@ export class SplashScreen extends HTMLElement {
 
     // Window load handler.
     const handler = () => {
-      setTimeout(() => this.classList.add('hidden'), 100);
+      setTimeout(() => this.classList.add('loaded'), 100);
       window.removeEventListener('load', handler);
     };
     window.addEventListener('load', handler);
 
     // Style.
     style.innerHTML = style.innerHTML + `
-      body:not(:has(splash-screen.hidden)) :not(splash-screen) {
+      body:not(:has(splash-screen.loaded)) :not(splash-screen) {
         display: none;
       }
     `;
@@ -49,14 +49,11 @@ const createTemplate = () => {
     pointer-events: auto;
     transition: 1s;
   }
-  :host(.hidden) {
+  :host(.loaded) {
     pointer-events: none;
     opacity: 0.5;
   }
   `;
-
-  // Content.
-  template.appendChild(document.createElement('slot'));
 
   // Output.
   return template;
