@@ -162,7 +162,7 @@ const createTemplate = () => {
   // Title.
   const headline = template.appendChild(document.createElement('h1'));
   headline.innerHTML = `
-    We made it happen <span class="text-transform-capitalize color-purple-orange-diagonal">with you</span>
+    We made it <span class="text-transform-capitalize color-purple-orange-diagonal">happen with you</span>
   `;
   headline.classList.add('text-transform-capitalize');
   headline.classList.add('text-wrap-balance');
