@@ -7,7 +7,7 @@ import {
 import LINKS from '../data/links.mjs';
 
 // Extend generic HTMLElement interface.
-export class ContactUs extends HTMLElement {
+export class FooterInfo extends HTMLElement {
   // Constructor.
   constructor() {
     super();
@@ -105,7 +105,7 @@ const createTemplate = () => {
 }
 
 // Default export.
-export default ContactUs;
+export default FooterInfo;
 
 // Register component.
-customElements.define('contact-us', ContactUs);
+customElements.define('footer-info', FooterInfo);
