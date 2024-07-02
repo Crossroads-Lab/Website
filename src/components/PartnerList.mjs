@@ -66,6 +66,11 @@ const createTemplate = () => {
       transform: scale(0.9);
       transition: var(--tranition-time);
     }
+    a div span {
+      color: var(--light);
+      text-align: center;
+      line-height: 140%;
+    }
     a div span:first-of-type {
       font-weight: 600;
       font-size: var(--size-16-18);
@@ -116,6 +121,7 @@ const createTemplate = () => {
     href && (el.setAttribute('href', href));
     el.classList.add('icon-container');
     el.classList.add('xlarge');
+    el.classList.add('link');
 
     el = el.appendChild(document.createElement('img'));
     el.classList.add('icon');
