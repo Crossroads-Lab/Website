@@ -60,7 +60,7 @@ const createTemplate = () => {
       justify-content: center;
       padding: calc(0.5 * var(--padding-half));
       gap: var(--gap-half);
-      background: #000000C0;
+      background: #000000D1;
       opacity: 0;
       backdrop-filter: blur(0);
       transform: scale(0.8);
