@@ -10,7 +10,7 @@ export const PARTNERS = [
     href: 'https://www.automarketer.ai/'
   },
   {
-    src: 'assets/partners/gococo.png',
+    src: 'assets/partners/gococo.svg',
     name: 'Gococo',
     href: 'https://www.gococo.ai/'
   },
