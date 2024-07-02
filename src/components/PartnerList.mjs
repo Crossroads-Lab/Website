@@ -83,7 +83,7 @@ const createTemplate = () => {
       justify-content: center;
       padding: calc(0.5 * var(--padding-half));
       gap: var(--gap-half);
-      background: #000000D8;
+      background: #000000E8;
       opacity: 0;
       --_blur: 15px;
       -webkit-backdrop-filter: blur(var(--_blur));
