@@ -17,7 +17,7 @@ export class SplashScreen extends HTMLElement {
     window.addEventListener('load', handler);
 
     // Style.
-    style.cssText = style.cssText + `
+    style.innerHTML = style.innerHTML + `
       body:not(:has(splash-screen.hidden)) :not(splash-screen) {
         display: none;
       }
@@ -44,7 +44,7 @@ const createTemplate = () => {
     align-items: center;
     justify-content: center;
     z-index: var(--z-index-max);
-    background: red;
+    background: blue;
     opacity: 1;
     pointer-events: auto;
   }
