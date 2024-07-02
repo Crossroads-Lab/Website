@@ -41,9 +41,6 @@ const createTemplate = () => {
     background: var(--blueberry);
     padding: var(--padding) var(--padding-width-90-percent);
   }
-  img {
-    filter: saturate(0) brightness(2);
-  }
   `;
 
   for (let i = 0, p = PARTNERS || [], l = p.length, partner, el, name, href; i !== l; ++i) {
