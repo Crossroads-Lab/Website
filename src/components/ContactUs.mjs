@@ -60,7 +60,6 @@ const createTemplate = () => {
   // Logo.
   logoLink.classList.add('link');
   logoLink.classList.add('cursor-n-resize');
-  logoLink.classList.add('icon');
   logoLink.setAttribute('href', '#front-page-slide-show');
   logoLink.setAttribute('title', 'Go to top of the page');
   logoImg.setAttribute('src', LOGO);
