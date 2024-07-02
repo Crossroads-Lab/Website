@@ -151,7 +151,8 @@ const createTemplate = () => {
   }
   `;
 
-  const title = template.appendChild(document.createElement('h1')).innerHTML = `
+  const title = template.appendChild(document.createElement('h1'));
+  title.innerHTML = `
     We made it <span class="text-transform-capitalize color-purple-orange-diagonal">happen</span> with <span class="text-transform-capitalize color-purple-orange-diagonal">you</span>
   `;
   title.classList.add('text-transform-capitalize');
