@@ -66,6 +66,7 @@ const createTemplate = () => {
       transform: scale(0.8);
       transition: var(--transition-time);
       index: 2;
+      border-radius: 2px;
     }
     a div span {
       color: var(--light);
