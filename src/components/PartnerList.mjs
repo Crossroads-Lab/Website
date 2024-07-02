@@ -1,4 +1,5 @@
 import PARTNERS from '../data/partnerData.mjs';
+import LINKS from '../data/links.mjs';
 
 // Extend generic HTMLElement interface.
 export class PartnerList extends HTMLElement {
