@@ -1,7 +1,7 @@
 import PARTNERS from '../data/partnerData.mjs';
 
 // Extend generic HTMLElement interface.
-export class Partners extends HTMLElement {
+export class PartnerList extends HTMLElement {
   // Constructor.
   constructor() {
     super();
@@ -25,7 +25,7 @@ const createTemplate = () => {
 }
 
 // Default export.
-export default Partners;
+export default PartnerList;
 
 // Register component.
-customElements.define('partners', Partners);
+customElements.define('partner-list', PartnerList);
