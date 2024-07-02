@@ -51,7 +51,7 @@ const createTemplate = () => {
   }
   :host(.hidden) {
     pointer-events: none;
-    opacity: 0;
+    opacity: 0.5;
   }
   `;
 
