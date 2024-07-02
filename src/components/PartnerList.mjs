@@ -152,14 +152,24 @@ const createTemplate = () => {
   }
   `;
 
-  const title = template.appendChild(document.createElement('h1'));
-  title.innerHTML = `
+  // headline.
+  const title = template.appendChild(document.createElement('span'));
+  title.innerHTML = 'portfolio';
+  title.classList.add('text-transform-capitalize');
+  title.classList.add('text-wrap-balance');
+  title.classList.add('text-align-center');
+
+  // Title.
+  const headline = template.appendChild(document.createElement('h1'));
+  headline.innerHTML = `
     We made it happen <span class="text-transform-capitalize color-purple-orange-diagonal">with you</span>
   `;
-  title.classList.add('text-transform-capitalize');
+  headline.classList.add('text-transform-capitalize');
+  headline.classList.add('text-wrap-balance');
+  headline.classList.add('text-align-center');
 
+  // Grid.
   const content = template.appendChild(document.createElement('div'));
-
   for (let i = 0, p = PARTNERS || [], l = p.length, partner, el, name, href; i !== l; ++i) {
     partner = p[i];
     name = partner.name || partner.value || partner.title || partner.alt;
