@@ -20,6 +20,46 @@ let template;
 const createTemplate = () => {
   const template = document.createDocumentFragment();
 
+  // Linked style.
+  const externalStyle = template.appendChild(document.createElement('link'));
+  externalStyle.setAttribute('rel', 'stylesheet');
+  externalStyle.setAttribute('href', LINKS.CSS || LINKS.STYLES);
+  externalStyle.setAttribute('type', 'text/css');
+
+  // Style.
+  template.appendChild(document.createElement('style')).innerHTML = `
+  :host {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: var(--gap);
+    flex-wrap: wrap;
+    color: var(--light);
+    background: var(--blueberry);
+    padding: var(--padding) var(--padding-width-90-percent);
+  }
+  img {
+    filter: saturate(0) brightness(2);
+  }
+  `;
+
+  for (let i = 0, p = PARTNERS || [], l = p.length, partner, el, name, href; i !== l; ++i) {
+    partner = p[i];
+    name = partner.name || partner.value || partner.title || partner.alt;
+    href = partner.href || partner.url || partner.link;
+    el = template.appendChild(document.createElement('a'));
+    el.setAttribute('title', `Go to ${partner.title || name || href || 'partner\'s page'}`);
+    href && (el.setAttribute('href', href));
+    el.classList.add('icon-container large');
+
+    el = el.appendChild(document.createElement('img'));
+    el.classList.add('icon');
+    el.setAttribute('src', partner.src);
+    el.setAttribute('alt', partner.alt || name);
+  }
+
   // Output.
   return template;
 }
