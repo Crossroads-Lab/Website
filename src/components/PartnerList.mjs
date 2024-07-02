@@ -70,6 +70,7 @@ const createTemplate = () => {
     a {
       position: relative;
       aspect-ratio: 1/1;
+      max-width: none;
     }
 
     a div {
