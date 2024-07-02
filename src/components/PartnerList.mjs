@@ -127,25 +127,25 @@ const createTemplate = () => {
   }
 
   @media only screen and (max-width: 850px) {
-    :host {
+    :host > div {
       grid-template-columns: 1fr 1fr 1fr 1fr;
     }
   }
 
   @media only screen and (max-width: 720px) {
-    :host {
+    :host > div {
       grid-template-columns: 1fr 1fr 1fr;
     }
   }
 
   @media only screen and (max-width: 500px) {
-    :host {
+    :host > div {
       grid-template-columns: 1fr 1fr;
     }
   }
 
   @media only screen and (max-width: 300px) {
-    :host {
+    :host > div {
       grid-template-columns: 1fr;
     }
   }
