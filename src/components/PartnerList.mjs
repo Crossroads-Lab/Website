@@ -64,7 +64,7 @@ const createTemplate = () => {
       opacity: 0;
       backdrop-filter: blur(0);
       transform: scale(0.9);
-      transition: var(--tranition-time);
+      transition: var(--transition-time);
     }
     a div span {
       color: var(--light);
