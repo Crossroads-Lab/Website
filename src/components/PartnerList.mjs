@@ -35,10 +35,24 @@ const createTemplate = () => {
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    gap: var(--gap-half);
+    gap: var(--gap);
     color: var(--light);
     background: var(--gray-5);
     padding: var(--padding) var(--padding-width-90-percent);
+  }
+
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 15%;
+  }
+
+  a img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    z-index: 0;
   }
 
   a div {
@@ -49,6 +63,7 @@ const createTemplate = () => {
     :host {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+      gap: var(--gap-half);
     }
 
     a {
@@ -71,7 +86,7 @@ const createTemplate = () => {
       backdrop-filter: blur(0);
       transform: scale(0.8);
       transition: var(--transition-time);
-      index: 2;
+      z-index: 1;
       border-radius: 2px;
     }
     a div span {
@@ -127,12 +142,10 @@ const createTemplate = () => {
     el = template.appendChild(document.createElement('a'));
     el.setAttribute('title', `Go to ${partner.title || name || href || 'partner\'s page'}`);
     href && (el.setAttribute('href', href));
-    el.classList.add('icon-container');
     el.classList.add('xlarge');
     el.classList.add('link');
 
     el = el.appendChild(document.createElement('img'));
-    el.classList.add('icon');
     el.setAttribute('src', partner.src);
     el.setAttribute('alt', partner.alt || name);
 
