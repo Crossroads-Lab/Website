@@ -103,7 +103,7 @@ const createTemplate = () => {
       transform: scale(0.8);
       transition: var(--transition-time);
       z-index: 1;
-      border-radius: 2px;
+      border-radius: 32px;
     }
     a div span {
       color: var(--dark);
@@ -123,6 +123,7 @@ const createTemplate = () => {
       opacity: 1;
       transform: none;
       --_blur: 15px;
+      border-radius: 2px;
     }
   }
 
