@@ -65,6 +65,7 @@ const createTemplate = () => {
       backdrop-filter: blur(0);
       transform: scale(0.8);
       transition: var(--transition-time);
+      index: 2;
     }
     a div span {
       color: var(--light);
