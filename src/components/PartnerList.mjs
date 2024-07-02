@@ -58,7 +58,7 @@ const createTemplate = () => {
       height: 100%;
       align-items: center;
       justify-content: center;
-      padding: var(--padding-half);
+      padding: calc(0.5 * var(--padding-half));
       gap: var(--gap-half);
       background: #000000C0;
       opacity: 0;
