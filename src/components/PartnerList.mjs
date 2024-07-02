@@ -32,13 +32,37 @@ const createTemplate = () => {
   :host {
     width: 100%;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     align-items: center;
     justify-content: center;
     gap: var(--gap);
     color: var(--light);
     background: var(--gray-5);
     padding: var(--padding) var(--padding-width-90-percent);
+  }
+
+  @media only screen and (max-width: 850px) {
+    :host {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+  }
+
+  @media only screen and (max-width: 720px) {
+    :host {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+
+  @media only screen and (max-width: 500px) {
+    :host {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media only screen and (max-width: 300px) {
+    :host {
+      grid-template-columns: 1fr;
+    }
   }
   `;
 
