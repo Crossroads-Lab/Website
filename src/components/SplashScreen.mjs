@@ -47,9 +47,9 @@ const createTemplate = () => {
     background: black;
     opacity: 1;
     pointer-events: auto;
+    transition: 1s;
   }
   :host(.hidden) {
-    transition: 3s;
     pointer-events: none;
     opacity: 0;
   }
