@@ -151,13 +151,13 @@ const createTemplate = () => {
     el.classList.add('xlarge');
     el.classList.add('link');
 
-    el = el.appendChild(document.createElement('img'));
-    el.setAttribute('src', partner.src);
-    el.setAttribute('alt', partner.alt || name);
-
-    el = el.parentNode.appendChild(document.createElement('div'));
+    el = el.appendChild(document.createElement('div'));
     el.appendChild(document.createElement('span')).innerHTML = name;
     el.appendChild(document.createElement('span')).innerHTML = partner.description || '';
+
+    el = el.parentNode.appendChild(document.createElement('img'));
+    el.setAttribute('src', partner.src);
+    el.setAttribute('alt', partner.alt || name);
   }
 
   // Output.
