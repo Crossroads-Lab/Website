@@ -51,7 +51,7 @@ const createTemplate = () => {
   a img {
     width: 100%;
     height: 100%;
-    max-height: var(--size-32-48);
+    max-height: var(--size-48-64);
     object-fit: contain;
     z-index: 0;
   }
