@@ -69,6 +69,7 @@ const createTemplate = () => {
   description.setAttribute('title', description.innerHTML = DESCRIPTION);
   description.classList.add('font-size-12-14');
   description.classList.add('width-50-percent');
+  description.classList.add('line-height-170-percent');
   description.classList.add('text-align-center');
 
   // Socials.
