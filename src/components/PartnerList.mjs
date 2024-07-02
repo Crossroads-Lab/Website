@@ -108,6 +108,7 @@ const createTemplate = () => {
     }
 
     a:hover div {
+      background: #FFFFFF;
       opacity: 1;
       transform: none;
       -webkit-backdrop-filter: blur(15px);
