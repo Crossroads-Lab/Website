@@ -31,12 +31,11 @@ const createTemplate = () => {
   template.appendChild(document.createElement('style')).innerHTML = `
   :host {
     width: 100%;
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     align-items: center;
     justify-content: center;
     gap: var(--gap);
-    flex-wrap: wrap;
     color: var(--light);
     background: var(--gray-5);
     padding: var(--padding) var(--padding-width-90-percent);
