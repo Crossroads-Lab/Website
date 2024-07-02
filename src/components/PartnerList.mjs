@@ -32,13 +32,22 @@ const createTemplate = () => {
   :host {
     width: 100%;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: var(--gap);
     color: var(--light);
-    background: var(--gray-5);
+    background: var(--blueberry);
     padding: var(--padding) var(--padding-width-90-percent);
+  }
+
+  :host > div {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: var(--gap);
   }
 
   a {
@@ -54,6 +63,7 @@ const createTemplate = () => {
     max-height: var(--size-48-64);
     object-fit: contain;
     z-index: 0;
+    filter: invert(1);
   }
 
   a div {
@@ -61,7 +71,7 @@ const createTemplate = () => {
   }
 
   @media (hover: hover) and (pointer: fine), (-ms-high-contrast: active), (forced-colors: active) {
-    :host {
+    :host > div {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
       gap: var(--gap-half);
@@ -83,7 +93,8 @@ const createTemplate = () => {
       justify-content: center;
       padding: calc(0.5 * var(--padding-half));
       gap: var(--gap-half);
-      background: #000000D8;
+      background: #FFFFFFD8;
+      color: var(--dark);
       opacity: 0;
       --_blur: 15px;
       -webkit-backdrop-filter: blur(var(--_blur));
@@ -140,11 +151,17 @@ const createTemplate = () => {
   }
   `;
 
+  template.appendChild(document.createElement('h1')).innerHTML = `
+    We made it <span class="capitalize color-purple-orange-diagonal">with you</span>
+  `;
+
+  const content = template.appendChild(document.createElement('div'));
+
   for (let i = 0, p = PARTNERS || [], l = p.length, partner, el, name, href; i !== l; ++i) {
     partner = p[i];
     name = partner.name || partner.value || partner.title || partner.alt;
     href = partner.href || partner.url || partner.link;
-    el = template.appendChild(document.createElement('a'));
+    el = content.appendChild(document.createElement('a'));
     el.setAttribute('title', `Go to ${partner.title || name || href || 'partner\'s page'}`);
     href && (el.setAttribute('href', href));
     el.setAttribute('target', '_blank');
