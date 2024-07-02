@@ -12,7 +12,7 @@ export class SplashScreen extends HTMLElement {
     shadow.appendChild(template.cloneNode(true));
 
     const handler = () => {
-      setTimeout(this.classList.add('hidden'), 100);
+      setTimeout(() => this.classList.add('hidden'), 100);
       window.removeEventListener('load', handler);
     };
     window.addEventListener('load', handler);
@@ -37,7 +37,7 @@ const createTemplate = () => {
     background: black;
     opacity: 1;
     pointer-events: auto;
-    transition: 1s;
+    transition: 3s;
   }
   :host(.hidden) {
     pointer-events: none;
