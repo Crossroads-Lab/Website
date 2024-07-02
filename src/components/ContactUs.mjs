@@ -78,18 +78,19 @@ const createTemplate = () => {
   socials.classList.add('middle');
   socials.classList.add('center');
   socials.classList.add('gap');
-  for (let i = 0, s = SOCIALS || [], l = s.length, link, img, social; i !== l; ++i) {
+  for (let i = 0, s = SOCIALS || [], l = s.length, link, img, n, social; i !== l; ++i) {
     link = socials.appendChild(document.createElement('a'));
     img = link.appendChild(document.createElement('img'));
     social = s[i];
-    link.setAttribute('title', `Go to our ${social.value || social.name || social.title || 'social'} page`);
+    n = social.value || social.name || social.title || '';
+    link.setAttribute('title', `Go to our ${n || 'social'} page`);
     link.setAttribute('target', '_blank');
     link.setAttribute('href', social.url || social.href || social.link);
     link.classList.add('link');
     link.classList.add('icon-container');
     img.classList.add('icon');
-    img.setAttribute('src', social.src, social.img || social.icon);
-    img.setAttribute('alt', `${social.value || social.name || social.title || 'Social'} logo`);
+    img.setAttribute('src', social.src, social.img || social.icon || `https://crossroads-lab.github.io/Design-System/icons/socials/${n.tolowercase()}-light.svg`);
+    img.setAttribute('alt', `${n || 'Social'} logo`);
   }
 
   // Copyright.

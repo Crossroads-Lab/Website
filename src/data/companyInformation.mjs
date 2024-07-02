@@ -7,17 +7,14 @@ export const SOCIALS = COMPANY_INFORMATION.SOCIALS = [
   {
     value: 'LinkedIn',
     href: 'https://www.linkedin.com/company/crossroads-venture-studio',
-    src: 'https://crossroads-lab.github.io/Design-System/icons/socials/linkedin-light.svg'
   },
   {
     value: 'Instagram',
     href: '',
-    src: 'https://crossroads-lab.github.io/Design-System/icons/socials/instagram-light.svg'
   },
   {
     value: 'x',
     href: '',
-    src: 'https://crossroads-lab.github.io/Design-System/icons/socials/x-light.svg'
   }
 ];
 export const LOGO = COMPANY_INFORMATION.LOGO = 'assets/logos/logo-full-color.svg';
