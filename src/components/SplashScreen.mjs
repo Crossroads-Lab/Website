@@ -1,3 +1,5 @@
+import style from 'https://crossroads-lab.github.io/Client/src/index.mjs';
+
 // Extend generic HTMLElement interface.
 export class SplashScreen extends HTMLElement {
   // Constructor.
@@ -7,15 +9,23 @@ export class SplashScreen extends HTMLElement {
     // Create template if needed.
     template || (template = createTemplate());
 
-    // Attach shadow DOM to element.
-    const shadow = this.attachShadow({mode: 'open'});
-    shadow.appendChild(template.cloneNode(true));
-
+    // Window load handler.
     const handler = () => {
-      // setTimeout(() => this.classList.add('hidden'), 100);
+      setTimeout(() => this.classList.add('hidden'), 100);
       window.removeEventListener('load', handler);
     };
     window.addEventListener('load', handler);
+
+    // Style.
+    style.cssText = style.cssText + `
+      body:not(:has(splash-screen.hidden)) :not(splash-screen) {
+        display: none;
+      }
+    `;
+
+    // Attach shadow DOM to element.
+    const shadow = this.attachShadow({mode: 'open'});
+    shadow.appendChild(template.cloneNode(true));
   }
 }
 
@@ -34,7 +44,7 @@ const createTemplate = () => {
     align-items: center;
     justify-content: center;
     z-index: var(--z-index-max);
-    background: green;
+    background: red;
     opacity: 1;
     pointer-events: auto;
   }
