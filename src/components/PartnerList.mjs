@@ -51,7 +51,7 @@ const createTemplate = () => {
     el.setAttribute('title', `Go to ${partner.title || name || href || 'partner\'s page'}`);
     href && (el.setAttribute('href', href));
     el.classList.add('icon-container');
-    el.classList.add('large');
+    el.classList.add('xlarge');
 
     el = el.appendChild(document.createElement('img'));
     el.classList.add('icon');
