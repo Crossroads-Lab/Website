@@ -85,9 +85,10 @@ const createTemplate = () => {
       gap: var(--gap-half);
       background: #000000D8;
       opacity: 0;
-      -webkit-backdrop-filter: blur(0);
-      -moz-backdrop-filter: blur(0);
-      backdrop-filter: blur(0);
+      --_blur: 15px;
+      -webkit-backdrop-filter: blur(var(--_blur));
+      -moz-backdrop-filter: blur(var(--_blur));
+      backdrop-filter: blur(var(--_blur));
       transform: scale(0.8);
       transition: var(--transition-time);
       z-index: 1;
@@ -108,12 +109,9 @@ const createTemplate = () => {
     }
 
     a:hover div {
-      background: #FFFFFF;
       opacity: 1;
       transform: none;
-      -webkit-backdrop-filter: blur(15px);
-      -moz-backdrop-filter: blur(15px);
-      backdrop-filter: blur(15px);
+      --_blur: 15px;
     }
   }
 
