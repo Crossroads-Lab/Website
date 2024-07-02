@@ -20,7 +20,7 @@ top-navbar {
   position: fixed;
   width: 100%;
   --_padding-top: calc(var(--safearea-top) + var(--padding-half));
-  min-height: calc(var(--size-48-64) + var(--_padding-top));
+  min-height: calc(var(--size-48-56) + var(--_padding-top));
   display: flex;
   align-items: center;
   padding: 0 var(--padding-horizontal);
