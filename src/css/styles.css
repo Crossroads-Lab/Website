@@ -23,7 +23,7 @@ top-navbar {
   min-height: calc(var(--size-48-64) + var(--_padding-top));
   display: flex;
   align-items: center;
-  padding: var(--_padding-top) var(--padding-horizontal) 0 var(--padding-horizontal);
+  padding: 0 var(--padding-horizontal);
   opacity: 1 !important;
   z-index: calc(var(--z-index-max) - 1);
 
@@ -41,6 +41,7 @@ body[data-scrolling='false'] top-navbar {
 }
 
 body:not([data-scrolling='true']) top-navbar {
+  padding-top: var(--_padding-top);
   -webkit-backdrop-filter: none;
   -moz-backdrop-filter: none;
   backdrop-filter: none;
