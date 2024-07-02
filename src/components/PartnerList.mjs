@@ -35,7 +35,6 @@ const createTemplate = () => {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     align-items: center;
     justify-content: center;
-    gap: var(--gap);
     color: var(--light);
     background: var(--gray-5);
     padding: var(--padding) var(--padding-width-90-percent);
