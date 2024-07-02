@@ -1,4 +1,4 @@
-import style from 'https://crossroads-lab.github.io/Client/src/index.mjs';
+import { style } from 'https://crossroads-lab.github.io/Client/src/index.mjs';
 
 // Extend generic HTMLElement interface.
 export class SplashScreen extends HTMLElement {
