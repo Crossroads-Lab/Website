@@ -39,24 +39,24 @@ favicon && addLink({href: favicon, rel: 'shortcut icon', type: 'image/x-icon', c
 // Preload images.
 addComment('Preload images');
 COMPANY_INFORMATION.LOGO
-  && addLink({href: COMPANY_INFORMATION.LOGO, rel: 'prefetch', as: 'image'});
+  && addLink({href: COMPANY_INFORMATION.LOGO, rel: 'preload', as: 'image'});
 TOP_NAVBAR_CONTENT.LOGO
   && TOP_NAVBAR_CONTENT.LOGO !== COMPANY_INFORMATION.LOGO
-  && addLink({href: TOP_NAVBAR_CONTENT.LOGO, rel: 'prefetch', as: 'image'});
+  && addLink({href: TOP_NAVBAR_CONTENT.LOGO, rel: 'preload', as: 'image'});
 for (let i = 0, data = COMPANY_INFORMATION.SOCIALS || [], l = data.length, d, src; i !== l; ++i) {
   d = data[i];
   src = d.src || d.icon || `https://crossroads-lab.github.io/Design-System/icons/socials/${(d.value || d.name || d.title || '').toLowerCase()}-light.svg`;
-  src && addLink({href: src, rel: 'prefetch', as: 'image'});
+  src && addLink({href: src, rel: 'preload', as: 'image'});
 }
 for (let i = 0, data = FRONT_PAGE_SLIDE_SHOW_CONTENT || [], l = data.length, d, src; i !== l; ++i) {
   d = data[i];
   src = d.src || (d.background && `assets/backgrounds/${d.background}`);
-  src && addLink({href: src, rel: 'prefetch', as: 'image'});
+  src && addLink({href: src, rel: 'preload', as: 'image'});
 }
 for (let i = 0, data = PARTNERS || [], l = data.length, d, src; i !== l; ++i) {
   d = data[i];
   src = d.src || d.logo;
-  src && addLink({href: src, rel: 'prefetch', as: 'image'});
+  src && addLink({href: src, rel: 'preload', as: 'image'});
 }
 
 // Remove script node.
