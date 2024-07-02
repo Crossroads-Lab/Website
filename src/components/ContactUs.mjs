@@ -77,7 +77,7 @@ const createTemplate = () => {
   socials.classList.add('row');
   socials.classList.add('middle');
   socials.classList.add('center');
-  socials.classList.add('gap-half');
+  socials.classList.add('gap');
   for (let i = 0, s = SOCIALS || [], l = s.length, link, img, social; i !== l; ++i) {
     link = socials.appendChild(document.createElement('a'));
     img = link.appendChild(document.createElement('img'));
