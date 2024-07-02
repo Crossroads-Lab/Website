@@ -96,7 +96,7 @@ const createTemplate = () => {
       background: #FFFFFFD8;
       color: var(--dark);
       opacity: 0;
-      --_blur: 15px;
+      --_blur: 0px;
       -webkit-backdrop-filter: blur(var(--_blur));
       -moz-backdrop-filter: blur(var(--_blur));
       backdrop-filter: blur(var(--_blur));
@@ -106,7 +106,7 @@ const createTemplate = () => {
       border-radius: 2px;
     }
     a div span {
-      color: var(--light);
+      color: var(--dark);
       text-align: center;
       line-height: 140%;
     }
