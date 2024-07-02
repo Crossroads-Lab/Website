@@ -38,7 +38,7 @@ const createTemplate = () => {
     gap: var(--gap);
     flex-wrap: wrap;
     color: var(--light);
-    background: var(--blueberry);
+    background: var(--gray-5);
     padding: var(--padding) var(--padding-width-90-percent);
   }
   `;
