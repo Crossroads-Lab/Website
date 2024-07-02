@@ -45,7 +45,7 @@ const createTemplate = () => {
     display: flex;
     align-items: center;
     justify-content: center;
-    max-width: 15%;
+    max-width: 20%;
   }
 
   a img {
