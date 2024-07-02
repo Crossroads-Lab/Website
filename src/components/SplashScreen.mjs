@@ -44,7 +44,7 @@ const createTemplate = () => {
     align-items: center;
     justify-content: center;
     z-index: var(--z-index-max);
-    background: red;
+    background: blue;
     opacity: 1;
     pointer-events: auto;
     transition: 1s;
