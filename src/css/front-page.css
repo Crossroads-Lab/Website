@@ -72,6 +72,10 @@ front-page img {
   overflow: hidden;
 }
 
+front-page.anim img {
+  transition: opacity 3s;
+}
+
 @media (hover: hover) and (pointer: fine), (-ms-high-contrast: active), (forced-colors: active) {
   front-page button,
   front-page a {
