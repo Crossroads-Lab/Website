@@ -12,7 +12,8 @@ export class TopNavbar extends HTMLElement {
   connectedCallback() {
     const logoSrc = this.getAttribute('logo-src') || LOGO,
     name = this.getAttribute('logo-name') || NAME,
-    titleContent = this.getAttribute('logo-title') || TITLE || `Welcome to ${name || 'our website'}`,
+    titleHTML = TITLE || `Welcome to ${name || 'our website'}`,
+    titleContent = this.getAttribute('logo-title') || titleHTML,
     link = this.appendChild(template || (template = createTemplate())),
     title = link.childNodes[0],
     img = logoSrc && link.appendChild(document.createElement('img'));
@@ -23,7 +24,8 @@ export class TopNavbar extends HTMLElement {
       img.setAttribute('src', logoSrc),
       img.classList.add('icon'),
       img.setAttribute('alt', 'Top navbar logo'),
-      title.classList.add('hidden')
+      title.classList.add('hidden'),
+      title.innerHTML = titleHTML
     );
   }
 }
