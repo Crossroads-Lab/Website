@@ -26,7 +26,7 @@ export class FrontPage extends HTMLElement {
 
   connectedCallback() {
     // Create template if needed.
-    this.appendChild(template || (template = createTemplate()));
+    this.appendChild((template || (template = createTemplate())).cloneNode(true));
     const title = this.getAttribute('title')
       || `Welcome to ${[NAME, TAGLINE].filter(x => x).join(' | ') || 'our website'}`,
     headline = this.childNodes[0],

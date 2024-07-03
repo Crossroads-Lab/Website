@@ -14,7 +14,7 @@ export class TopNavbar extends HTMLElement {
     name = this.getAttribute('logo-name') || NAME,
     titleHTML = TITLE || `Welcome to ${name || 'our website'}`,
     titleContent = this.getAttribute('logo-title') || titleHTML,
-    link = this.appendChild(template || (template = createTemplate())),
+    link = this.appendChild((template || (template = createTemplate())).cloneNode(true)),
     title = link.childNodes[0],
     img = logoSrc && link.appendChild(document.createElement('img'));
     link.setAttribute('href', this.getAttribute('logo-href') || '#');
