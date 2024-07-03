@@ -77,8 +77,8 @@ const createTemplate = () => {
     :host > div {
       display: -webkit-grid;
       display: grid;
-      grid-template-columns: repeat( 5, -webkit-minmax( 150px, 1fr ) );
-      grid-template-columns: repeat( 5, minmax( 150px, 1fr ) );
+      grid-template-columns: repeat( auto-fit, -webkit-minmax( 150px, 1fr ) );
+      grid-template-columns: repeat( auto-fit, minmax( 150px, 1fr ) );
       gap: var(--gap-half);
       grid-gap: var(--gap-half);
     }
