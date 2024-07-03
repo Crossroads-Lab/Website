@@ -23,7 +23,7 @@ export class TopNavbar extends HTMLElement {
       img.setAttribute('src', logoSrc),
       img.classList.add('icon'),
       img.setAttribute('alt', 'Top navbar logo'),
-      title.classList.add('invisible')
+      title.classList.add('hidden')
     );
   }
 }
