@@ -7,9 +7,8 @@ export class FrontPageSlideShow extends HTMLElement {
 
   connectedCallback() {
     // Create template if needed, and get children.
-    const children = this.appendChild(
-      (template || (template = createTemplate())).cloneNode(true)
-    ).assignedElements() || [],
+    console.log(this, this.childNodes);
+    const children = this.childNodes || [],
     [t, u = 'ms'] = (this.getAttribute('ms') || this.getAttribute('time') || '10000').split(/(ms|s)/),
     ms = parseFloat(t) * (u.trim().toLowerCase() === 's' && 1000 || 1),
     l = children.length;
