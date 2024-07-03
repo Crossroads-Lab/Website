@@ -73,9 +73,12 @@ const createTemplate = () => {
   @media (hover: hover) and (pointer: fine), (-ms-high-contrast: active), (forced-colors: active) {
     :host > div {
       display: -webkit-grid;
+      display: -moz-grid;
+      display: -ms-grid;
       display: grid;
       grid-template-columns: repeat( 5, -webkit-minmax( 150px, 1fr ) );
       grid-template-columns: repeat( 5, minmax( 150px, 1fr ) );
+      -ms-grid-columns: repeat( 5, minmax( 150px, 1fr ) );
       gap: var(--gap-half);
       grid-gap: var(--gap-half);
       min-height: 300px;
@@ -136,25 +139,33 @@ const createTemplate = () => {
 
   @media only screen and (max-width: 900px) {
     :host > div {
-      grid-template-columns: repeat( 4, minmax( 0, 1fr ) );
+      grid-template-columns: repeat( 4, -webkit-minmax( 150px, 1fr ) );
+      grid-template-columns: repeat( 4, minmax( 150px, 1fr ) );
+      -ms-grid-columns: repeat( 4, minmax( 150px, 1fr ) );
     }
   }
 
   @media only screen and (max-width: 720px) {
     :host > div {
-      grid-template-columns: repeat( 3, minmax( 0, 1fr ) );
+      grid-template-columns: repeat( 3, -webkit-minmax( 150px, 1fr ) );
+      grid-template-columns: repeat( 3, minmax( 150px, 1fr ) );
+      -ms-grid-columns: repeat( 3, minmax( 150px, 1fr ) );
     }
   }
 
   @media only screen and (max-width: 500px) {
     :host > div {
-      grid-template-columns: repeat( 2, minmax( 0, 1fr ) );
+      grid-template-columns: repeat( 2, -webkit-minmax( 150px, 1fr ) );
+      grid-template-columns: repeat( 2, minmax( 150px, 1fr ) );
+      -ms-grid-columns: repeat( 2, minmax( 150px, 1fr ) );
     }
   }
 
   @media only screen and (max-width: 300px) {
     :host > div {
-      grid-template-columns: minmax( 0, 1fr );
+      grid-template-columns: -webkit-minmax( 150px, 1fr );
+      grid-template-columns: minmax( 150px, 1fr );
+      -ms-grid-columns: minmax( 150px, 1fr );
     }
   }
   `;
