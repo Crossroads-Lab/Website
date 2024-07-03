@@ -5,6 +5,7 @@ export const FRONT_PAGE_SLIDE_SHOW_CONTENT = [
     link: 'Co-found with us',
     background: 'background-0.png',
     animation: 'zoom-out-left',
+    origin: 'left',
     href: '#contact-us'
   },
   {
@@ -22,6 +23,7 @@ export const FRONT_PAGE_SLIDE_SHOW_CONTENT = [
     link: 'Co-found with us',
     background: 'background-2.jpg',
     animation: 'zoom-out-right',
+    origin: 'right',
     href: '#contact-us'
   },
   {
@@ -30,6 +32,7 @@ export const FRONT_PAGE_SLIDE_SHOW_CONTENT = [
     link: 'Co-found with us',
     background: 'background-3.jpg',
     animation: 'zoom-out-top',
+    origin: 'top',
     href: '#contact-us'
   },
   {
@@ -45,7 +48,8 @@ export const FRONT_PAGE_SLIDE_SHOW_CONTENT = [
     description: 'Let\'s innovate and build the products of tomorrow together',
     link: 'Co-found with us',
     background: 'background-5.jpg',
-    animation: 'zoom-out-left',
+    animation: 'zoom-out',
+    origin: 'left',
     href: '#contact-us'
   },
   {
@@ -53,7 +57,8 @@ export const FRONT_PAGE_SLIDE_SHOW_CONTENT = [
     description: 'Time for you to be part of the next generation of entrepreneurs',
     link: 'Co-found with us',
     background: 'background-6.jpg',
-    animation: 'zoom-out-top',
+    animation: 'zoom-out',
+    origin: 'top',
     href: '#contact-us'
   }
 ];

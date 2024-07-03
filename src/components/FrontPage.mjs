@@ -4,6 +4,7 @@ import { NAME, TAGLINE } from '../data/companyInformation.mjs';
 export class FrontPage extends HTMLElement {
   #background;
   #animation;
+  #origin;
 
   // Constructor.
   constructor() {
@@ -14,6 +15,7 @@ export class FrontPage extends HTMLElement {
   startAnimation() {
     this.classList.add('anim');
     this.#background && this.#background.classList.add(this.#animation);
+    this.#origin && this.#background.classList.add(this.#origin);
     return this;
   }
 
@@ -21,6 +23,7 @@ export class FrontPage extends HTMLElement {
   cancelAnimation() {
     this.classList.remove('anim');
     this.#background && this.#background.classList.remove(this.#animation);
+    this.#origin && this.#background.classList.remove(this.#origin);
     return this;
   }
 
@@ -45,6 +48,7 @@ export class FrontPage extends HTMLElement {
     kf = this.getAttribute('anim')
       || this.getAttribute('animation')
       || this.getAttribute('keyframes'),
+    origin = this.getAttribute('origin'),
     background = this.getAttribute('src'),
     img;
 
@@ -56,9 +60,10 @@ export class FrontPage extends HTMLElement {
     // Animation.
     kf || (
       kf = `zoom-${~~(Math.random() * 2) && 'in' || 'out'}`,
-      kf += ['', '-top', '-left', '-bottom', '-right'][~~(Math.random() * 5)]
+      origin || (origin = ['', 'top', 'left', 'bottom', 'right'][~~(Math.random() * 5)])
     );
     this.#animation = kf.replace('-animation', '') + '-animation';
+    this.#origin = 'origin-' + origin.replace('origin-', '');
 
     // Background image.
     background || (
@@ -86,101 +91,6 @@ const createTemplate = () => {
   // Output.
   return template;
 }
-
-// Helper function to create keyframe.
-const createKeyframes = input => Object.defineProperty(input || {}, 'toString', {
-  value: function() {
-    return Object.entries(this).map(([key, value]) => (
-      `${key} {\n${
-        Object.entries(value || {}).map(([k, v]) => `${k}: ${v};`).join('\n')
-      }\n}`
-    )).join('\n');
-  }
-});
-
-// Define keyframes.
-const keyframes = {
-  'zoom-out': createKeyframes({
-    from: {
-      transform: 'scale(1.1)'
-    },
-    to: {
-      transform: 'none'
-    }
-  }),
-  'zoom-out-top-left': createKeyframes({
-    from: {
-      transform: 'scale(1.1)',
-      'transform-origin': 'top left'
-    },
-    to: {
-      transform: 'none'
-    }
-  }),
-  'zoom-out-top-right': createKeyframes({
-    from: {
-      transform: 'scale(1.1)',
-      'transform-origin': 'top right'
-    },
-    to: {
-      transform: 'none'
-    }
-  }),
-  'zoom-out-top': createKeyframes({
-    from: {
-      transform: 'scale(1.1)',
-      'transform-origin': 'top'
-    },
-    to: {
-      transform: 'none'
-    }
-  }),
-  'zoom-out-bottom-left': createKeyframes({
-    from: {
-      transform: 'scale(1.1)',
-      'transform-origin': 'bottom left'
-    },
-    to: {
-      transform: 'none'
-    }
-  }),
-  'zoom-out-bottom-right': createKeyframes({
-    from: {
-      transform: 'scale(1.1)',
-      'transform-origin': 'bottom right'
-    },
-    to: {
-      transform: 'none'
-    }
-  }),
-  'zoom-out-bottom': createKeyframes({
-    from: {
-      transform: 'scale(1.1)',
-      'transform-origin': 'bottom'
-    },
-    to: {
-      transform: 'none'
-    }
-  }),
-  'zoom-out-left': createKeyframes({
-    from: {
-      transform: 'scale(1.1)',
-      'transform-origin': 'left'
-    },
-    to: {
-      transform: 'none'
-    }
-  }),
-  'zoom-out-right': createKeyframes({
-    from: {
-      transform: 'scale(1.1)',
-      'transform-origin': 'right'
-    },
-    to: {
-      transform: 'none'
-    }
-  })
-};
 
 // Default export.
 export default FrontPage;
