@@ -17,11 +17,11 @@ export class SplashScreen extends HTMLElement {
     window.addEventListener('load', handler);
 
     // Style.
-    style.innerHTML = style.innerHTML + `
+    style.sheet.insertRule(`
       body:not(:has(splash-screen.loaded)) :not(splash-screen) {
         display: none;
       }
-    `;
+    `);
 
     // Attach shadow DOM to element.
     const shadow = this.attachShadow({mode: 'open'});
