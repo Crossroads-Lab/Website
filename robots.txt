@@ -1,0 +1,6 @@
+# robots.txt file for the website.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://www.crossroadsventurestudio.com/sitemap.xml
