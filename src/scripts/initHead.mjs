@@ -48,7 +48,7 @@ image && (
 
 // Add SEO | Twitter card tags.
 twitterSite && (
-  addMetaTag({property: 'twitter:card', content: 'website', comment: 'SEO | Twitter/X card tags'}),
+  addMetaTag({property: 'twitter:card', content: 'summary', comment: 'SEO | Twitter/X card tags'}),
   addMetaTag({property: 'twitter:site', content: twitterSite}),
   addMetaTag({property: 'twitter:creator', content: twitterCreator}),
   description && addMetaTag({property: 'twitter:description', content: description}),
