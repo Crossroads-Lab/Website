@@ -43,7 +43,6 @@ const createTemplate = () => {
 
   :host > div {
     width: 100%;
-    min-height: 0;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -56,8 +55,6 @@ const createTemplate = () => {
     align-items: center;
     justify-content: center;
     max-width: 20%;
-    min-width: 0;
-    min-height: 0;
   }
 
   a img {
@@ -81,12 +78,15 @@ const createTemplate = () => {
       grid-template-columns: repeat( 5, minmax( 150px, 1fr ) );
       gap: var(--gap-half);
       grid-gap: var(--gap-half);
+      min-height: 300px;
     }
 
     a {
       position: relative;
       aspect-ratio: 1/1;
       max-width: none;
+      min-width: 150px;
+      min-height: 150px;
     }
 
     a div {
