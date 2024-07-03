@@ -32,7 +32,7 @@ export class FrontPageSlideShow extends HTMLElement {
     setInterval(() => {
       const cur = children[index],
         next = children[index = (index + 1) % l];
-      cur.style.transition = next.style.transition = '3s';
+      cur.style.transition = next.style.transition = 'opacity 3s';
       cur.style.opacity = 0;
       setTimeout(() => cur.cancelAnimation(), (~~ms) >> 1);
       next.style.opacity = 1;
