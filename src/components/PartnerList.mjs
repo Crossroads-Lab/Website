@@ -75,9 +75,12 @@ const createTemplate = () => {
 
   @media (hover: hover) and (pointer: fine), (-ms-high-contrast: active), (forced-colors: active) {
     :host > div {
+      display: -webkit-grid;
       display: grid;
+      grid-template-columns: repeat( 5, -webkit-minmax( 0, 1fr ) );
       grid-template-columns: repeat( 5, minmax( 0, 1fr ) );
       gap: var(--gap-half);
+      grid-gap: var(--gap-half);
     }
 
     a {
