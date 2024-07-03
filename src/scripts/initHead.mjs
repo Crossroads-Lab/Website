@@ -14,18 +14,26 @@ import {
   removeScriptNode
 } from 'https://crossroads-lab.github.io/Client/src/index.mjs';
 
+// Add create tags.
+const title = [
+  COMPANY_INFORMATION.NAME,
+  COMPANY_INFORMATION.TAGLINE
+].join(' | ');
+const image =  COMPANY_INFORMATION.LOGO || COMPANY_INFORMATION.IMAGE;
+
 // Add title to head.
-addTitle({title: COMPANY_INFORMATION.NAME, comment: 'Document title'});
+addTitle({title, comment: 'Document title'});
 
 // Add default meta tags, i.e. charset and viewport.
 addMetaTag({charset: 'utf-8', comment: 'Default meta tags'});
 addMetaTag({name: 'viewport', content: 'width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover, user-scalable=no'});
 addMetaTag({name: 'theme-color', content: '#000000'});
+addMetaTag({name: 'description', content: COMPANY_INFORMATION.DESCRIPTION || title});
+image && addMetaTag({name: 'image', content: image});
 
 // Add SEO | Open Graph meta tags.
 COMPANY_INFORMATION.NAME && addMetaTag({property: 'og:title', content: COMPANY_INFORMATION.NAME, comment: 'SEO | Open Graph meta tags'});
 COMPANY_INFORMATION.DESCRIPTION && addMetaTag({property: 'og:description', content: COMPANY_INFORMATION.DESCRIPTION});
-const image =  COMPANY_INFORMATION.LOGO || COMPANY_INFORMATION.IMAGE;
 image && addMetaTag({property: 'og:image', content: image});
 
 // Add css.

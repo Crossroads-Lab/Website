@@ -4,6 +4,6 @@
     <loc>
       https://www.crossroadsventurestudio.com/
     </loc>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.crossroadsventurestudio.com/"/>
+    <xhtml:link rel="canonical" hreflang="x-default" href="https://www.crossroadsventurestudio.com/"/>
   </url>
 </urlset>
