@@ -43,6 +43,7 @@ const createTemplate = () => {
 
   :host > div {
     width: 100%;
+    min-height: 0;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -56,6 +57,7 @@ const createTemplate = () => {
     justify-content: center;
     max-width: 20%;
     min-width: 0;
+    min-height: 0;
   }
 
   a img {
