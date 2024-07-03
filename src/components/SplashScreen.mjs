@@ -18,6 +18,10 @@ export class SplashScreen extends HTMLElement {
 
     // Style.
     style.innerHTML = style.innerHTML + `
+      html:not(:has(splash-screen.loaded)),
+      body:not(:has(splash-screen.loaded)) {
+        background: black;
+      }
       body:not(:has(splash-screen.loaded)) :not(splash-screen) {
         display: none;
       }
