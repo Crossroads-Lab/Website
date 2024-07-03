@@ -8,7 +8,7 @@
 
 /* General html elements */
 html, body {
-  --background: var(--blueberry);
+  --background: var(--blueberry, black);
   background: var(--background);
 }
 
