@@ -1,7 +1,8 @@
+@import url('https://crossroads-lab.github.io/Design-System/css/index.css');
+
 /* Theme */
 :root {
-  --background-color: #B0E7F6;
-  --content-background-color: white;
-  --button-background: #84D2E8;
-  --profile-background: linear-gradient(45deg, #B0E7F6, #C3EBDA);
+  --background: var(--blueberry, black);
+  --button-background: var(--purple-orange-diagonal);
+  --button-hover-color: var(--orange);
 }

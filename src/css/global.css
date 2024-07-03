@@ -8,7 +8,6 @@
 
 /* General html elements */
 html, body {
-  --background: var(--blueberry, black);
   background: var(--background);
 }
 
@@ -17,27 +16,6 @@ html, body, * {
   /* color: var(--dark); */
   overflow-x: hidden !important;
   /* scrollbar-gutter: stable; */
-}
-
-/* Top navbar */
-top-navbar {
-  display: block;
-  position: fixed;
-  width: 100%;
-  --_padding-top: calc(var(--safearea-top) + var(--padding-half));
-  min-height: calc(var(--size-48-56) + var(--_padding-top));
-  display: flex;
-  align-items: center;
-  padding: 0 var(--padding-horizontal);
-  opacity: 1 !important;
-  z-index: calc(var(--z-index-max) - 1);
-
-  /* When scrolling */
-  background: #000000A0;
-  --_blur: 15px;
-  -webkit-backdrop-filter: blur(var(--_blur));
-  -moz-backdrop-filter: blur(var(--_blur));
-  backdrop-filter: blur(var(--_blur));
 }
 
 body[data-scrolling='true'] top-navbar,

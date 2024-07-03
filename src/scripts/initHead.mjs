@@ -57,7 +57,7 @@ twitterSite && (
     addMetaTag({property: 'twitter:image', content: image}),
     addMetaTag({property: 'twitter:image:alt', content: 'Logo of the company'})
   )
-)
+);
 
 // Add canonical link.
 addLink({href: window.location.href, rel: 'canonical', comment: 'Canonical url'});
