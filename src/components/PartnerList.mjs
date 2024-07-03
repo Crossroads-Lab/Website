@@ -79,6 +79,9 @@ const createTemplate = () => {
       grid-template-columns: repeat( 5, -webkit-minmax( 150px, 1fr ) );
       grid-template-columns: repeat( 5, minmax( 150px, 1fr ) );
       -ms-grid-columns: repeat( 5, minmax( 150px, 1fr ) );
+      grid-template-rows: repeat( auto-fit, -webkit-minmax( 150px, 1fr ) );
+      grid-template-rows: repeat( auto-fit, minmax( 150px, 1fr ) );
+      -ms-grid-rows: repeat( auto-fit, minmax( 150px, 1fr ) );
       gap: var(--gap-half);
       grid-gap: var(--gap-half);
       min-height: 300px;
