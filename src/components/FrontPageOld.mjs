@@ -80,9 +80,90 @@ let template;
 const createTemplate = () => {
   const template = document.createDocumentFragment();
 
+  // Style.
+  template.appendChild(document.createElement('style')).innerHTML = `
+  :host {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: var(--text-gap-2x);
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding-top: var(--padding-2x);
+    padding-left: var(--padding-width-90-percent);
+    padding-bottom: var(--padding-2x);
+    padding-right: var(--padding-width-70-percent);
+    overflow: hidden !important;
+  }
+
+  * {
+    color: var(--light);
+    z-index: 1;
+  }
+
+  h1 {
+    font-size: var(--size-40-64);
+    font-weight: 900;
+    letter-spacing: .1rem;
+    text-wrap: balance;
+    margin: 0;
+    padding: 0;
+    line-height: 110%;
+  }
+
+  h2 {
+    font-size: var(--size-20-28);
+    font-weight: 500;
+    text-wrap: balance;
+    margin: 0;
+    padding: 0;
+  }
+
+  a, button {
+    border: 0;
+    font-size: var(--size-16-18);
+    font-weight: 500;
+    text-shadow: 0 0 10px #00000087;
+    margin-top: var(--gap-half);
+    background: var(--purple-orange-diagonal);
+    padding: 10px 14px;
+    border-radius: 2px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-decoration: none;
+    -webkit-text-decoration: none;
+    text-decoration: none;
+  }
+
+  @media (hover: hover) and (pointer: fine), (-ms-high-contrast: active), (forced-colors: active) {
+    a, button {
+      transition: var(--transition-time);
+      cursor: pointer;
+      outline: 5px solid transparent;
+      outline-offset: 10px;
+    }
+    button:hover, a:hover {
+      --_color: var(--orange);
+      outline: 1px solid var(--_color);
+      outline-offset: 0px;
+      background: none;
+      --_shadow: 8px 8px 0px var(--_color);
+      -webkit-box-shadow: var(--_shadow);
+      -moz-box-shadow: var(--_shadow);
+      box-shadow: var(--_shadow);
+    }
+  }
+  `;
+
   // Content.
+  template.appendChild(document.createElement('h1'));
   template.appendChild(document.createElement('h2'));
-  template.appendChild(document.createElement('p'));
   template.appendChild(document.createElement('a'));
 
   // Output.

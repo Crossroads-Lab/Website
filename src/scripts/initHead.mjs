@@ -18,7 +18,7 @@ import {
 const title = [
   COMPANY_INFORMATION.NAME,
   COMPANY_INFORMATION.TAGLINE
-].join(' | '),
+].filter(x => x).join(' | '),
 name = COMPANY_INFORMATION.NAME || title,
 description = COMPANY_INFORMATION.DESCRIPTION || title,
 image =  COMPANY_INFORMATION.IMAGE || COMPANY_INFORMATION.LOGO,

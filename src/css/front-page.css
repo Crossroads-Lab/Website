@@ -60,6 +60,22 @@ front-page a {
   text-decoration: none;
 }
 
+front-page img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+  object-fit: cover;
+  z-index: 0;
+  overflow: hidden;
+}
+
+front-page.anim img {
+  transition: 1s;
+}
+
 @media (hover: hover) and (pointer: fine), (-ms-high-contrast: active), (forced-colors: active) {
   front-page button,
   front-page a {
