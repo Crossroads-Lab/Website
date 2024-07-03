@@ -20,6 +20,7 @@ export class TopNavbar extends HTMLElement {
       link.setAttribute('title', this.getAttribute('logo-title') || 'Logo');
       img.setAttribute('src', logoSrc);
       img.classList.add('icon');
+      img.setAttribute('alt', 'logo');
     }
   }
 }
