@@ -156,7 +156,7 @@ const createTemplate = () => {
     }
   }
 
-  @media only screen and (max-width: 500px) {
+  @media only screen and (max-width: 600px) {
     :host > div {
       grid-template-columns: repeat( 2, -webkit-minmax( 150px, 1fr ) );
       grid-template-columns: repeat( 2, minmax( 150px, 1fr ) );
