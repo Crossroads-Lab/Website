@@ -63,7 +63,7 @@ export class FrontPage extends HTMLElement {
       origin || (origin = ['', 'top', 'left', 'bottom', 'right'][~~(Math.random() * 5)])
     );
     this.#animation = kf.replace('-animation', '') + '-animation';
-    this.#origin = 'origin-' + origin.replace('origin-', '');
+    origin && (this.#origin = 'origin-' + origin.replace('origin-', ''));
 
     // Background image.
     background || (
