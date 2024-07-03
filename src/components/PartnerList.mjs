@@ -41,6 +41,10 @@ const createTemplate = () => {
     padding: var(--padding) var(--padding-width-90-percent);
   }
 
+  h1 {
+    font-size: var(--size-40-64);
+  }
+
   :host > div {
     width: 100%;
     display: flex;
