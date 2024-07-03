@@ -79,6 +79,7 @@ const createTemplate = () => {
       gap: var(--gap-half);
       grid-gap: var(--gap-half);
       min-height: 300px;
+      box-sizing: border-box;
     }
 
     a {
