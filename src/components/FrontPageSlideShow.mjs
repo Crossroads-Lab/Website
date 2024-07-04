@@ -7,12 +7,17 @@ export class FrontPageSlideShow extends HTMLElement {
 
   connectedCallback() {
     // Create template if needed, and get children.
-    console.log(this, this.childNodes);
-    const children = this.childNodes || [],
+    const children = [],
     [t, u = 'ms'] = (this.getAttribute('ms') || this.getAttribute('time') || '10000').split(/(ms|s)/),
-    ms = parseFloat(t) * (u.trim().toLowerCase() === 's' && 1000 || 1),
-    l = children.length;
-    let index = (this.getAttribute('startIndex') || Math.floor(Math.random() * l)) % l;
+    ms = parseFloat(t) * (u.trim().toLowerCase() === 's' && 1000 || 1);
+
+    // Filter out non element nodes.
+    for (let i = 0, cn = this.childNodes, c, n = cn.length; i !== n; ++i) {
+      (c = cn[i]).nodeType === Node.ELEMENT_NODE && children.push(c);
+    }
+
+    let l = children.length, 
+    index = (this.getAttribute('startIndex') || Math.floor(Math.random() * l)) % l;
 
     // Create animation.
     for (let i = 0, c; i !== l; ++i) {
