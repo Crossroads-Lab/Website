@@ -16,7 +16,7 @@ export class FrontPage extends HTMLElement {
     this.#origin && this.#background.classList.add(this.#origin);
     this.#background && this.#background.classList.add(this.#animation);
     this.classList.add('anim');
-    console.log('start', this.#background.getAttribute('src'), this.#animation, this.#origin);
+    console.log('div start', this.#background.getAttribute('src'), this.#animation, this.#origin);
     return this;
   }
 
@@ -25,7 +25,7 @@ export class FrontPage extends HTMLElement {
     this.#origin && this.#background.classList.remove(this.#origin);
     this.#background && this.#background.classList.remove(this.#animation);
     this.classList.remove('anim');
-    console.log('end', this.#background.getAttribute('src'), this.#animation, this.#origin);
+    console.log('div end', this.#background.getAttribute('src'), this.#animation, this.#origin);
     return this;
   }
 
@@ -52,6 +52,7 @@ export class FrontPage extends HTMLElement {
       || this.getAttribute('keyframes'),
     origin = this.getAttribute('origin'),
     background = this.getAttribute('src'),
+    position = this.getAttribute('src'),
     img;
 
     // Button.
@@ -73,9 +74,10 @@ export class FrontPage extends HTMLElement {
       background && (background = `assets/backgrounds/${background}`)
     );
     background && (
-      this.#background = img = this.appendChild(document.createElement('img')),
+      this.#background = img = this.appendChild(document.createElement('div')),
       img.setAttribute('alt', 'Background image'),
-      img.setAttribute('src', background)
+      img.style.backgroundImage = `url(${background})`,
+      position && (img.style.backgroundPosition = position)
     );
   }
 }
