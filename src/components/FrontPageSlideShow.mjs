@@ -40,15 +40,6 @@ export class FrontPageSlideShow extends HTMLElement {
   }
 }
 
-// Template.
-let template;
-const createTemplate = () => {
-  const template = document.createElement('slot');
-
-  // Output.
-  return template;
-}
-
 // Default export.
 export default FrontPageSlideShow;
 
