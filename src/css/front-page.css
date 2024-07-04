@@ -73,7 +73,7 @@ front-page img {
 }
 
 front-page.anim {
-  transition: opacity 3s;
+  /* transition: opacity 3s; */
 }
 
 @media (hover: hover) and (pointer: fine), (-ms-high-contrast: active), (forced-colors: active) {
