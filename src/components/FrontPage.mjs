@@ -4,7 +4,6 @@ import { NAME, TAGLINE } from '../data/companyInformation.mjs';
 export class FrontPage extends HTMLElement {
   #background;
   #animation;
-  #origin;
 
   // Constructor.
   constructor() {
@@ -13,19 +12,15 @@ export class FrontPage extends HTMLElement {
 
   // Helper function to start background animation.
   startAnimation() {
-    // this.#origin && this.#background.classList.add(this.#origin);
     this.#background && this.#background.classList.add(this.#animation);
     this.classList.add('anim');
-    console.log('>> start', this.#background.getAttribute('src'), this.#animation, this.#origin);
     return this;
   }
 
   // Helper function to cancel background animation.
   cancelAnimation() {
-    // this.#origin && this.#background.classList.remove(this.#origin);
     this.#background && this.#background.classList.remove(this.#animation);
     this.classList.remove('anim');
-    console.log('>> end', this.#background.getAttribute('src'), this.#animation, this.#origin);
     return this;
   }
 
@@ -66,7 +61,7 @@ export class FrontPage extends HTMLElement {
       origin || (origin = ['', 'top', 'left', 'bottom', 'right'][~~(Math.random() * 5)])
     );
     this.#animation = kf.replace('-animation', '') + '-animation';
-    origin && (this.#origin = 'origin-' + origin.replace('origin-', ''));
+    origin && (origin = 'origin-' + origin.replace('origin-', ''));
 
     // Background image.
     background || (
@@ -77,7 +72,7 @@ export class FrontPage extends HTMLElement {
       this.#background = img = this.appendChild(document.createElement('img')),
       img.setAttribute('alt', 'Background image'),
       img.setAttribute('src', background),
-      this.#origin && img.classList.add(this.#origin),
+      origin && img.classList.add(origin),
       position && (img.style.objectPosition = position)
     );
   }
