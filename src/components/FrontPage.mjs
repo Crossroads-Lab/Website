@@ -13,19 +13,19 @@ export class FrontPage extends HTMLElement {
 
   // Helper function to start background animation.
   startAnimation() {
-    this.#origin && this.#background.classList.add(this.#origin);
+    // this.#origin && this.#background.classList.add(this.#origin);
     this.#background && this.#background.classList.add(this.#animation);
     this.classList.add('anim');
-    console.log('img start', this.#background.getAttribute('src'), this.#animation, this.#origin);
+    console.log('> start', this.#background.getAttribute('src'), this.#animation, this.#origin);
     return this;
   }
 
   // Helper function to cancel background animation.
   cancelAnimation() {
-    this.#origin && this.#background.classList.remove(this.#origin);
+    // this.#origin && this.#background.classList.remove(this.#origin);
     this.#background && this.#background.classList.remove(this.#animation);
     this.classList.remove('anim');
-    console.log('img end', this.#background.getAttribute('src'), this.#animation, this.#origin);
+    console.log('> end', this.#background.getAttribute('src'), this.#animation, this.#origin);
     return this;
   }
 
@@ -77,8 +77,7 @@ export class FrontPage extends HTMLElement {
       this.#background = img = this.appendChild(document.createElement('img')),
       img.setAttribute('alt', 'Background image'),
       img.setAttribute('src', background),
-      // img.setAttribute('width', 'var(--viewport-width)'),
-      // img.setAttribute('height', 'var(--viewport-height)'),
+      this.#origin && img.classList.add(this.#origin),
       position && (img.style.objectPosition = position)
     );
   }
