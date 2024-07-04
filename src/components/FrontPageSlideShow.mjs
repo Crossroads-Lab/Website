@@ -16,6 +16,7 @@ export class FrontPageSlideShow extends HTMLElement {
       (c = cn[i]).nodeType === Node.ELEMENT_NODE && children.push(c);
     }
 
+    // Get stating index.
     let l = children.length, 
     index = (this.getAttribute('startIndex') || Math.floor(Math.random() * l)) % l;
 
