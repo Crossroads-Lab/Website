@@ -16,7 +16,7 @@ export class FrontPage extends HTMLElement {
     this.classList.add('anim');
     this.#origin && this.#background.classList.add(this.#origin);
     this.#background && this.#background.classList.add(this.#animation);
-    console.log('start', this.#background.getAttribute('src'), this.#animation, this.#origin);
+    // console.log('start', this.#background.getAttribute('src'), this.#animation, this.#origin);
     return this;
   }
 
@@ -25,7 +25,7 @@ export class FrontPage extends HTMLElement {
     this.classList.remove('anim');
     this.#origin && this.#background.classList.remove(this.#origin);
     this.#background && this.#background.classList.remove(this.#animation);
-    console.log('end', this.#background.getAttribute('src'), this.#animation, this.#origin);
+    // console.log('end', this.#background.getAttribute('src'), this.#animation, this.#origin);
     return this;
   }
 
