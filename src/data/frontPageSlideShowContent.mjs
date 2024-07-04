@@ -4,7 +4,7 @@ export const FRONT_PAGE_SLIDE_SHOW_CONTENT = [
     description: 'The venture studio that transform your ideas into reality',
     link: 'Co-found with us',
     background: 'background-0.png',
-    animation: 'zoom-out-left',
+    animation: 'zoom-out',
     origin: 'left',
     href: '#contact-us'
   },
@@ -22,7 +22,7 @@ export const FRONT_PAGE_SLIDE_SHOW_CONTENT = [
     description: 'From concept to launch, we\'re here to support you',
     link: 'Co-found with us',
     background: 'background-2.jpg',
-    animation: 'zoom-out-right',
+    animation: 'zoom-out',
     origin: 'right',
     href: '#contact-us'
   },
@@ -31,7 +31,7 @@ export const FRONT_PAGE_SLIDE_SHOW_CONTENT = [
     description: 'Leverage our team of tech, product, design and marketing experts',
     link: 'Co-found with us',
     background: 'background-3.jpg',
-    animation: 'zoom-out-top',
+    animation: 'zoom-out',
     origin: 'top',
     href: '#contact-us'
   },
