@@ -70,6 +70,7 @@ front-page img {
   height: 100%;
   max-width: var(--viewport-width);
   max-height: var(--viewport-height);
+  object-fit: cover;
   opacity: 0.5;
   z-index: 0;
   overflow: hidden;
