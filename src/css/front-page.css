@@ -70,6 +70,9 @@ front-page img {
   object-fit: cover;
   z-index: 0;
   overflow: hidden;
+}
+
+front-page.anim {
   transition: opacity 3s;
 }
 

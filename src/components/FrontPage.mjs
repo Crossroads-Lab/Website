@@ -13,6 +13,7 @@ export class FrontPage extends HTMLElement {
 
   // Helper function to start background animation.
   startAnimation() {
+    this.classList.add('anim');
     this.#origin && this.#background.classList.add(this.#origin);
     this.#background && this.#background.classList.add(this.#animation);
     console.log('start', this.#background.getAttribute('src'), this.#animation, this.#origin);
@@ -21,6 +22,7 @@ export class FrontPage extends HTMLElement {
 
   // Helper function to cancel background animation.
   cancelAnimation() {
+    this.classList.remove('anim');
     this.#origin && this.#background.classList.remove(this.#origin);
     this.#background && this.#background.classList.remove(this.#animation);
     console.log('end', this.#background.getAttribute('src'), this.#animation, this.#origin);
