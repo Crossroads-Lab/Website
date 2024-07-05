@@ -6,7 +6,7 @@ export const FRONT_PAGE_SLIDE_SHOW_CONTENT = [
     background: 'background-0.webp',
     animation: 'zoom-out',
     origin: 'left',
-    href: '#contact-us'
+    href: '#footer-info'
   },
   {
     headline: 'Your project, our execution',
@@ -15,7 +15,7 @@ export const FRONT_PAGE_SLIDE_SHOW_CONTENT = [
     background: 'background-1.webp',
     position: 'top left',
     animation: 'zoom-out',
-    href: '#contact-us'
+    href: '#footer-info'
   },
   {
     headline: 'The venture studio that has your back',
@@ -24,7 +24,7 @@ export const FRONT_PAGE_SLIDE_SHOW_CONTENT = [
     background: 'background-2.webp',
     animation: 'zoom-out',
     origin: 'right',
-    href: '#contact-us'
+    href: '#footer-info'
   },
   {
     headline: 'Learn fast, succeed faster',
@@ -33,7 +33,7 @@ export const FRONT_PAGE_SLIDE_SHOW_CONTENT = [
     background: 'background-3.webp',
     animation: 'zoom-out',
     origin: 'top',
-    href: '#contact-us'
+    href: '#footer-info'
   },
   {
     headline: 'From idea to market',
@@ -41,7 +41,7 @@ export const FRONT_PAGE_SLIDE_SHOW_CONTENT = [
     link: 'Co-found with us',
     background: 'background-4.webp',
     animation: 'zoom-out',
-    href: '#contact-us'
+    href: '#footer-info'
   },
   {
     headline: 'Are you ready?',
@@ -50,7 +50,7 @@ export const FRONT_PAGE_SLIDE_SHOW_CONTENT = [
     background: 'background-5.webp',
     animation: 'zoom-out',
     origin: 'left',
-    href: '#contact-us'
+    href: '#footer-info'
   },
   {
     headline: 'Join the mouvement',
@@ -59,7 +59,7 @@ export const FRONT_PAGE_SLIDE_SHOW_CONTENT = [
     background: 'background-6.webp',
     animation: 'zoom-out',
     origin: 'top',
-    href: '#contact-us'
+    href: '#footer-info'
   }
 ];
 
