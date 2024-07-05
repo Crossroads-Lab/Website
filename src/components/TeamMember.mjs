@@ -29,7 +29,7 @@ export class TeamMember extends HTMLElement {
     p.innerHTML = jobPosition;
     linkedin && (
       a.setAttribute('href', linkedin), 
-      a.style.backgroundImage = 'https://crossroads-lab.github.io/Design-System/icons/socials/linkedin-dark.svg'
+      a.style.backgroundImage = 'url(https://crossroads-lab.github.io/Design-System/icons/socials/linkedin-dark.svg)'
     );
   }
 }
