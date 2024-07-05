@@ -4,7 +4,8 @@ import {
   LINKS,
   TOP_NAVBAR_CONTENT,
   FRONT_PAGE_SLIDE_SHOW_CONTENT,
-  PARTNERS
+  PARTNERS,
+  STRUCTURED_DATA
  } from '../data/index.mjs';
 import {
   addComment,
@@ -95,6 +96,7 @@ favicon && addLink({href: favicon, rel: 'shortcut icon', type: 'image/x-icon', c
 // }
 
 // Add stuctured data.
+addStructuredData({data: STRUCTURED_DATA, comment: 'Structured data'});
 
 // Remove script node.
 removeScriptNode(import.meta.url);

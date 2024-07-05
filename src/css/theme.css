@@ -3,6 +3,7 @@
 /* Theme */
 :root {
   --background: var(--blueberry, black);
+  --spash-screen-background: black;
   --button-background: var(--purple-orange-diagonal);
   --button-hover-color: var(--orange);
 }

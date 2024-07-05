@@ -1,5 +1,6 @@
 export const COMPANY_INFORMATION = {};
 export const NAME = COMPANY_INFORMATION.NAME = 'Crossroads Venture Studio';
+export const LEGAL_NAME = COMPANY_INFORMATION.NAME = 'Crossroads Venture Studio, Inc.';
 export const TITLE = COMPANY_INFORMATION.TITLE = 'Crossroads, the venture studio that has your back';
 export const DESCRIPTION = COMPANY_INFORMATION.DESCRIPTION = 'CROSSROADS is an in-house startup incubator focused on projects with high return on investment, with minimum development and launch time and maximum impact';
 export const MEETING_LINK = COMPANY_INFORMATION.MEETING_LINK = 'https://calendly.com/william-brendel/30min';

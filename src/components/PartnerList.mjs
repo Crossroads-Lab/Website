@@ -213,6 +213,7 @@ const createTemplate = () => {
     el = el.parentNode.appendChild(document.createElement('img'));
     el.setAttribute('src', partner.src);
     el.setAttribute('alt', partner.alt || name);
+    el.setAttribute('loading', 'lazy');
   }
 
   // Output.

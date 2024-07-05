@@ -44,7 +44,7 @@ const createTemplate = () => {
     align-items: center;
     justify-content: center;
     z-index: var(--z-index-max);
-    background: var(--background);
+    background: var(--spash-screen-background, var(--background, black));
     opacity: 1;
     pointer-events: auto;
   }
