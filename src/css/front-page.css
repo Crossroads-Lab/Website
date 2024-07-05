@@ -70,6 +70,7 @@ front-page div {
   height: 100%;
   background-size: cover;
   background-repeat: none;
+  background-position: center;
   opacity: 0.5;
   z-index: 0;
   overflow: hidden;

@@ -1,0 +1,48 @@
+team-member {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-half);
+  padding: var(--padding-half);
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  color: var(--dark);
+  background: var(--light);
+  --_shadow: 0 0 30px #00000022;
+  -webkit-box-shadow: var(--_shadow);
+  -moz-box-shadow: var(--_shadow);
+  box-shadow: var(--_shadow);
+}
+
+team-member div {
+  --_size: var(--size-64-72);
+  width: var(--_size);
+  height: var(--_size);
+  border-radius: var(--border-radius-round);
+  overflow: hidden;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+team-member h2 {
+  margin: 0;
+  padding: 0;
+  font-weight: 700;
+  font-size: var(--size-18-20);
+  text-transform: capitalize;
+}
+
+team-member p {
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+  font-size: var(--size-14-16);
+  text-transform: capitalize;
+}
+
+team-member a {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
