@@ -63,6 +63,8 @@ const createTemplate = () => {
   logoLink.setAttribute('href', '#front-page-slide-show');
   logoLink.setAttribute('title', 'Go to top of the page');
   logoImg.setAttribute('src', LOGO);
+  logoImg.setAttribute('loading', 'lazy');
+  logoImg.setAttribute('alt', 'Company logo');
   logoImg.classList.add('icon');
 
   // Description.
@@ -91,6 +93,7 @@ const createTemplate = () => {
     img.classList.add('icon');
     img.setAttribute('src', social.src || social.img || social.icon || `https://crossroads-lab.github.io/Design-System/icons/socials/${n.toLowerCase()}-light.svg`);
     img.setAttribute('alt', `${n || 'Social'} logo`);
+    img.setAttribute('loading', 'lazy');
   }
 
   // Copyright.

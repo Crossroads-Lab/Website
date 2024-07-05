@@ -11,11 +11,12 @@ import {
   addLink,
   addMetaTag,
   addTitle,
+  addStructuredData,
   removeScriptNode
 } from 'https://crossroads-lab.github.io/Client/src/index.mjs';
 
 // Add create tags.
-const title = [
+const title = COMPANY_INFORMATION.TITLE || [
   COMPANY_INFORMATION.NAME,
   COMPANY_INFORMATION.TAGLINE
 ].filter(x => x).join(' | '),
@@ -71,27 +72,29 @@ const favicon = LINKS.FAVICON || LINKS.ICON;
 favicon && addLink({href: favicon, rel: 'shortcut icon', type: 'image/x-icon', comment: 'Favicon'});
 
 // Preload images.
-addComment('Prefetch images');
-COMPANY_INFORMATION.LOGO
-  && addLink({href: COMPANY_INFORMATION.LOGO, rel: 'prefetch', as: 'image'});
-TOP_NAVBAR_CONTENT.LOGO
-  && TOP_NAVBAR_CONTENT.LOGO !== COMPANY_INFORMATION.LOGO
-  && addLink({href: TOP_NAVBAR_CONTENT.LOGO, rel: 'prefetch', as: 'image'});
-for (let i = 0, data = COMPANY_INFORMATION.SOCIALS || [], l = data.length, d, src; i !== l; ++i) {
-  d = data[i];
-  src = d.src || d.icon || `https://crossroads-lab.github.io/Design-System/icons/socials/${(d.value || d.name || d.title || '').toLowerCase()}-light.svg`;
-  src && addLink({href: src, rel: 'prefetch', as: 'image'});
-}
-for (let i = 0, data = FRONT_PAGE_SLIDE_SHOW_CONTENT || [], l = data.length, d, src; i !== l; ++i) {
-  d = data[i];
-  src = d.src || (d.background && `assets/backgrounds/${d.background}`);
-  src && addLink({href: src, rel: 'prefetch', as: 'image'});
-}
-for (let i = 0, data = PARTNERS || [], l = data.length, d, src; i !== l; ++i) {
-  d = data[i];
-  src = d.src || d.logo;
-  src && addLink({href: src, rel: 'prefetch', as: 'image'});
-}
+// addComment('Prefetch images');
+// COMPANY_INFORMATION.LOGO
+//   && addLink({href: COMPANY_INFORMATION.LOGO, rel: 'prefetch', as: 'image'});
+// TOP_NAVBAR_CONTENT.LOGO
+//   && TOP_NAVBAR_CONTENT.LOGO !== COMPANY_INFORMATION.LOGO
+//   && addLink({href: TOP_NAVBAR_CONTENT.LOGO, rel: 'prefetch', as: 'image'});
+// for (let i = 0, data = COMPANY_INFORMATION.SOCIALS || [], l = data.length, d, src; i !== l; ++i) {
+//   d = data[i];
+//   src = d.src || d.icon || `https://crossroads-lab.github.io/Design-System/icons/socials/${(d.value || d.name || d.title || '').toLowerCase()}-light.svg`;
+//   src && addLink({href: src, rel: 'prefetch', as: 'image'});
+// }
+// for (let i = 0, data = FRONT_PAGE_SLIDE_SHOW_CONTENT || [], l = data.length, d, src; i !== l; ++i) {
+//   d = data[i];
+//   src = d.src || (d.background && `assets/backgrounds/${d.background}`);
+//   src && addLink({href: src, rel: 'prefetch', as: 'image'});
+// }
+// for (let i = 0, data = PARTNERS || [], l = data.length, d, src; i !== l; ++i) {
+//   d = data[i];
+//   src = d.src || d.logo;
+//   src && addLink({href: src, rel: 'prefetch', as: 'image'});
+// }
+
+// Add stuctured data.
 
 // Remove script node.
 removeScriptNode(import.meta.url);

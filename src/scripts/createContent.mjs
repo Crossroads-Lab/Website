@@ -5,6 +5,7 @@ import { detectScroll, removeScriptNode, style } from 'https://crossroads-lab.gi
 document.getElementById('front-page-slide-show').innerHTML
   = FRONT_PAGE_SLIDE_SHOW_CONTENT.map(props => props && (
     `<front-page
+        background-hidden="true"
         ${Object.entries(props).map(([k, v]) => `${k}="${v}"`).join('\n')}
       ></front-page>`
   )

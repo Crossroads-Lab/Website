@@ -3,6 +3,8 @@ import { NAME, TAGLINE } from '../data/companyInformation.mjs';
 // Extend generic HTMLElement interface.
 export class FrontPage extends HTMLElement {
   #background;
+  #backgroundSrc;
+  #hidden;
   #animation;
 
   // Constructor.
@@ -12,15 +14,36 @@ export class FrontPage extends HTMLElement {
 
   // Helper function to start background animation.
   startAnimation() {
-    this.#background && this.#background.classList.add(this.#animation);
+    this.unhideBackground();
+    this.#background.classList.add(this.#animation);
     this.classList.add('anim');
     return this;
   }
 
   // Helper function to cancel background animation.
   cancelAnimation() {
-    this.#background && this.#background.classList.remove(this.#animation);
+    this.#background.classList.remove(this.#animation);
     this.classList.remove('anim');
+    return this;
+  }
+
+  hideBackground() {
+    this.#hidden || (
+      this.background.style.backgroundImage = '',
+      this.background.classList.add('hidden'),
+      this.setAttribute('background-hidden', true),
+      this.#hidden = true
+    );
+    return this;
+  }
+
+  unhideBackground() {
+    this.#hidden && (
+      this.background.style.backgroundImage = `url(${this.#backgroundSrc})`,
+      this.background.classList.remove('hidden'),
+      this.removeAttribute('background-hidden'),
+      this.#hidden = false
+    );
     return this;
   }
 
@@ -31,7 +54,8 @@ export class FrontPage extends HTMLElement {
       || `Welcome to ${[NAME, TAGLINE].filter(x => x).join(' | ') || 'our website'}`,
     headline = this.childNodes[0],
     description = this.childNodes[1],
-    button = this.childNodes[2];
+    button = this.childNodes[2],
+    img = this.#background = this.childNodes[3];
 
     // Content.
     title && this.setAttribute('title', title);
@@ -47,8 +71,7 @@ export class FrontPage extends HTMLElement {
       || this.getAttribute('keyframes'),
     origin = this.getAttribute('origin'),
     background = this.getAttribute('src'),
-    position = this.getAttribute('position'),
-    img;
+    position = this.getAttribute('position');
 
     // Button.
     href && href !== 'undefined' && href !== 'null' && button.setAttribute('href', href);
@@ -68,12 +91,11 @@ export class FrontPage extends HTMLElement {
       background = this.getAttribute('background'),
       background && (background = `assets/backgrounds/${background}`)
     );
-    background && (
-      this.#background = img = this.appendChild(document.createElement('img')),
-      img.setAttribute('alt', 'Background image'),
-      img.setAttribute('src', background),
+    (this.#backgroundSrc = background) && (
+      (this.hasAttribute('background-hidden') && this.hideBackground())
+        || (img.style.backgroundImage = `url(${background})`),
       origin && img.classList.add(origin),
-      position && (img.style.objectPosition = position)
+      position && (img.style.backgroundPosition = position)
     );
   }
 }
@@ -87,6 +109,9 @@ const createTemplate = () => {
   template.appendChild(document.createElement('h2'));
   template.appendChild(document.createElement('p'));
   template.appendChild(document.createElement('a'));
+
+  // Background.
+  template.appendChild(document.createElement('div'));
 
   // Output.
   return template;
