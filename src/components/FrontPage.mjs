@@ -29,8 +29,8 @@ export class FrontPage extends HTMLElement {
 
   hideBackground() {
     this.#hidden || (
-      this.background.style.backgroundImage = '',
-      this.background.classList.add('hidden'),
+      this.#background.style.backgroundImage = '',
+      this.#background.classList.add('hidden'),
       this.setAttribute('background-hidden', true),
       this.#hidden = true
     );
@@ -39,8 +39,8 @@ export class FrontPage extends HTMLElement {
 
   unhideBackground() {
     this.#hidden && (
-      this.background.style.backgroundImage = `url(${this.#backgroundSrc})`,
-      this.background.classList.remove('hidden'),
+      this.#background.style.backgroundImage = `url(${this.#backgroundSrc})`,
+      this.#background.classList.remove('hidden'),
       this.removeAttribute('background-hidden'),
       this.#hidden = false
     );
