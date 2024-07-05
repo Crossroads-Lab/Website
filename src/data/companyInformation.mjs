@@ -20,7 +20,7 @@ export const SOCIALS = COMPANY_INFORMATION.SOCIALS = [
   }
 ];
 export const LOGO = COMPANY_INFORMATION.LOGO = 'assets/logos/logo-full-color.svg';
-export const IMAGE = COMPANY_INFORMATION.IMAGE = 'assets/logos/social-logo.png';
+export const IMAGE = COMPANY_INFORMATION.IMAGE = 'assets/logos/social-logo.webp';
 export const CREATION_YEAR = COMPANY_INFORMATION.CREATION_YEAR = 2023;
 export const FAVICON = COMPANY_INFORMATION.FAVICON = 'assets/favicon.ico';
 export const STYLES = COMPANY_INFORMATION.STYLES = 'src/css/styles.css';
