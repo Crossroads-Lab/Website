@@ -1,6 +1,5 @@
 import {
   NAME,
-  TAGLINE,
   TITTLE,
   DESCRIPTION,
   MEETING_LINK,

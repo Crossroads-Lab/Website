@@ -1,4 +1,4 @@
-import { NAME, TAGLINE } from '../data/companyInformation.mjs';
+import COMPANY_INFORMATION from '../data/companyInformation.mjs';
 
 // Extend generic HTMLElement interface.
 export class FrontPage extends HTMLElement {
@@ -51,7 +51,7 @@ export class FrontPage extends HTMLElement {
     // Create template if needed.
     this.appendChild((template || (template = createTemplate())).cloneNode(true));
     const title = this.getAttribute('title')
-      || `Welcome to ${[NAME, TAGLINE].filter(x => x).join(' | ') || 'our website'}`,
+      || `Welcome to ${[COMPANY_INFORMATION.NAME, COMPANY_INFORMATION.TAGLINE].filter(x => x).join(' | ') || 'our website'}`,
     headline = this.childNodes[0],
     description = this.childNodes[1],
     button = this.childNodes[2],
