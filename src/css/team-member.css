@@ -42,7 +42,10 @@ team-member p {
 }
 
 team-member a {
+  --_size: var(--size-20-24);
+  width: var(--_size);
+  height: var(--_size);
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
 }

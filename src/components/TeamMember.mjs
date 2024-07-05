@@ -15,7 +15,7 @@ export class TeamMember extends HTMLElement {
     const jobPosition = this.getAttribute('position') || this.getAttribute('title'),
       src = this.getAttribute('src') || this.getAttribute('pic') || this.getAttribute('imgSrc'),
       name = this.getAttribute('name'),
-      linkedin = this.getAttribute('linkedin');
+      linkedin = this.getAttribute('linkedin') || this.getAttribute('href');
 
     // Get nodes.
     const div = this.childNodes[0],
@@ -28,6 +28,7 @@ export class TeamMember extends HTMLElement {
     h2.innerHTML = name;
     p.innerHTML = jobPosition;
     linkedin && (
+      a.setAttribute('href', linkedin), 
       a.style.backgroundImage = 'https://crossroads-lab.github.io/Design-System/icons/socials/linkedin-dark.svg'
     );
   }
@@ -44,7 +45,6 @@ const createTemplate = () => {
   template.appendChild(document.createElement('p'));
   const a = template.appendChild(document.createElement('a'));
   a.classList.add('link');
-  a.classList.add('icon');
   a.setAttribute('target', '_blank');
 
   // Output.
