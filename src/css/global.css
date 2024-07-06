@@ -17,17 +17,3 @@ html, body, * {
   overflow-x: hidden !important;
   /* scrollbar-gutter: stable; */
 }
-
-body[data-scrolling='true'] top-navbar,
-body[data-scrolling='false'] top-navbar {
-  transition: 1s;
-}
-
-body:not([data-scrolling='true']) top-navbar {
-  padding-top: var(--_padding-top);
-  -webkit-backdrop-filter: none;
-  -moz-backdrop-filter: none;
-  backdrop-filter: none;
-  filter: none;
-  background: none;
-}

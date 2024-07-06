@@ -14,7 +14,7 @@ top-navbar {
   z-index: calc(var(--z-index-max) - 1);
 
   /* When scrolling */
-  background: #000000A0;
+  background: #000000D0;
   --_blur: 15px;
   -webkit-backdrop-filter: blur(var(--_blur));
   -moz-backdrop-filter: blur(var(--_blur));
@@ -24,4 +24,18 @@ top-navbar {
 top-navbar h1 {
   padding: 0;
   margin: 0;
+}
+
+body[data-scrolling='true'] top-navbar,
+body[data-scrolling='false'] top-navbar {
+  transition: 1s;
+}
+
+body:not([data-scrolling='true']) top-navbar {
+  padding-top: var(--_padding-top);
+  -webkit-backdrop-filter: none;
+  -moz-backdrop-filter: none;
+  backdrop-filter: none;
+  filter: none;
+  background: none;
 }
