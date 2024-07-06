@@ -1,5 +1,3 @@
-import COMPANY_INFORMATION from '../data/companyInformation.mjs';
-
 // Extend generic HTMLElement interface.
 export class TeamMember extends HTMLElement {
   // Constructor.
