@@ -12,6 +12,8 @@ team-member {
   -webkit-box-shadow: var(--_shadow);
   -moz-box-shadow: var(--_shadow);
   box-shadow: var(--_shadow);
+  width: calc(min(100%, max(30%, 375px)) - var(--padding));
+  height: 100%;
 }
 
 team-member div {
