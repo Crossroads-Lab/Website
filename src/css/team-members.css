@@ -2,9 +2,7 @@ team-members {
   display: flex;
   flex-wrap: wrap;
   gap: var(--gap-half);
-  padding: var(--padding-2x) var(--padding-width-90-percent);
   justify-content: center;
   align-items: center;
   width: 100%;
-  background: var(--light);
 }

@@ -25,11 +25,18 @@
 .section > legend *,
 .section > legend {
   text-transform: capitalize;
-  font-size: var(--size-12-14);
+  font-size: var(--size-14-16);
+  font-weight: 500;
 }
 
 .section > h2 *,
 .section > h2 {
   text-transform: capitalize;
   font-size: var(--size-40-64);
+}
+
+.section > h2,
+.section > legend {
+  text-wrap: balance;
+  text-align: center;
 }
