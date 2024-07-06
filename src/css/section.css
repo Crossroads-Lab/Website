@@ -1,0 +1,35 @@
+@import './theme.css';
+
+.section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap-half);
+  padding: var(--padding-2x) var(--padding-width-90-percent);
+  width: 100%;
+  color: var(--color);
+  background: var(--background);
+}
+
+.section.light {
+  background: var(--light);
+  color: var(--dark);
+}
+
+.section.dark {
+  background: var(--gray-2);
+  color: var(--light);
+}
+
+.section > legend *,
+.section > legend {
+  text-transform: capitalize;
+  font-size: var(--size-12-14);
+}
+
+.section > h2 *,
+.section > h2 {
+  text-transform: capitalize;
+  font-size: var(--size-40-64);
+}

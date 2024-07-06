@@ -17,13 +17,13 @@ export class TeamMember extends HTMLElement {
 
     // Get nodes.
     const div = this.childNodes[0],
-      h2 = this.childNodes[1],
+      h3 = this.childNodes[1],
       p = this.childNodes[2],
       a = this.childNodes[3];
 
     // Fill in the attributes.
     div.style.backgroundImage = `url(${src})`;
-    h2.innerHTML = name;
+    h3.innerHTML = name;
     p.innerHTML = jobPosition;
     linkedin && (
       a.setAttribute('href', linkedin), 
@@ -39,7 +39,7 @@ const createTemplate = () => {
 
   // Content.
   template.appendChild(document.createElement('div'));
-  template.appendChild(document.createElement('h2'));
+  template.appendChild(document.createElement('h3'));
   template.appendChild(document.createElement('p'));
   const a = template.appendChild(document.createElement('a'));
   a.classList.add('link');

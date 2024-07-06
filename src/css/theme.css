@@ -2,6 +2,7 @@
 
 /* Theme */
 :root {
+  --color: var(--light);
   --background: var(--blueberry, black);
   --spash-screen-background: black;
   --button-background: var(--purple-orange-diagonal);
