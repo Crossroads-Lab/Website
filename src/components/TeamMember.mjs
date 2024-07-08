@@ -27,6 +27,7 @@ export class TeamMember extends HTMLElement {
     h3.innerHTML = name;
     p.innerHTML = jobPosition;
     linkedin && (
+      a.setAttribute('title', `Click to view ${name}'s LinkedIn`),
       a.setAttribute('href', linkedin), 
       a.style.backgroundImage = 'url(https://crossroads-lab.github.io/Design-System/icons/socials/linkedin-dark.svg)'
     );
