@@ -16,24 +16,23 @@ export class SplashScreen extends HTMLElement {
     };
     window.addEventListener('load', handler);
 
-    // Style.
-    style.sheet.insertRule(`
-      body:not(:has(splash-screen.loaded)) :not(splash-screen) {
-        display: none;
-      }
-    `);
-    style.innerHTML = (style.innerHTML || '') + `
-      body:has(splash-screen) {
-        display: none;
-        background: blue;
-      }
-    `;
-
     // Attach shadow DOM to element.
     const shadow = this.attachShadow({mode: 'open'});
     shadow.appendChild(template.cloneNode(true));
   }
 }
+
+// Augment style.
+style.innerHTML += `
+  body:not(:has(splash-screen.loaded)) :not(splash-screen) {
+    display: none;
+  }
+`;
+// style.sheet.insertRule(`
+//   body:not(:has(splash-screen.loaded)) :not(splash-screen) {
+//     display: none;
+//   }
+// `);
 
 // Template.
 let template;
