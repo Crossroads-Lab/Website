@@ -2,6 +2,7 @@ import {
   CREATION_YEAR,
   DESCRIPTION,
   LOGO,
+  EMAIL,
   SOCIALS
 } from '../data/companyInformation.mjs';
 import LINKS from '../data/links.mjs';
@@ -16,7 +17,7 @@ export class FooterInfo extends HTMLElement {
     template || (template = createTemplate());
 
     // Attach shadow DOM to element.
-    const shadow = this.attachShadow({mode: 'open'});
+    const shadow = this.attachShadow({mode: 'closed'});
     shadow.appendChild(template.cloneNode(true));
   }
 }
@@ -55,6 +56,7 @@ const createTemplate = () => {
     logoImg = logoLink.appendChild(document.createElement('img')),
     description = template.appendChild(document.createElement('span')),
     socials = template.appendChild(document.createElement('div')),
+    email = template.appendChild(document.createElement('a')),
     copyright = template.appendChild(document.createElement('span'));
 
   // Logo.
@@ -95,6 +97,11 @@ const createTemplate = () => {
     img.setAttribute('alt', `${n || 'Social'} logo`);
     img.setAttribute('loading', 'lazy');
   }
+
+  // Email.
+  email.classList.add('link');
+  email.innerHTML = EMAIL;
+  email.setAttribute('href', `mailto:${email}`);
 
   // Copyright.
   copyright.classList.add('text-align-center');
