@@ -3,6 +3,7 @@ import {
   DESCRIPTION,
   LOGO,
   EMAIL,
+  MEETING_LINK,
   SOCIALS
 } from '../data/companyInformation.mjs';
 import LINKS from '../data/links.mjs';
@@ -40,9 +41,11 @@ const createTemplate = () => {
     background: var(--blueberry);
     padding: var(--padding) var(--padding-width-90-percent);
   }
+
   a {
     color: inherit;
   }
+
   img {
     filter: saturate(0) brightness(2);
   }
@@ -60,6 +63,7 @@ const createTemplate = () => {
     description = template.appendChild(document.createElement('span')),
     socials = template.appendChild(document.createElement('div')),
     email = template.appendChild(document.createElement('a')),
+    meeting = template.appendChild(document.createElement('a')),
     copyright = template.appendChild(document.createElement('span'));
 
   // Logo.
@@ -103,8 +107,15 @@ const createTemplate = () => {
 
   // Email.
   email.classList.add('link');
+  email.classList.add('bold');
   email.innerHTML = EMAIL;
-  email.setAttribute('href', `mailto:${email}`);
+  email.setAttribute('href', `mailto:${EMAIL}`);
+
+  // Meeting.
+  meeting.classList.add('link');
+  meeting.classList.add('bold');
+  meeting.innerHTML = 'Book a Meeting';
+  meeting.setAttribute('href', MEETING_LINK);
 
   // Copyright.
   copyright.classList.add('text-align-center');
