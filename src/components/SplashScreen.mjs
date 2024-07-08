@@ -21,6 +21,10 @@ export class SplashScreen extends HTMLElement {
       body:not(:has(splash-screen.loaded)) :not(splash-screen) {
         display: none;
       }
+      body:has(splash-screen) {
+        display: none;
+        background: blue;
+      }
     `);
 
     // Attach shadow DOM to element.
