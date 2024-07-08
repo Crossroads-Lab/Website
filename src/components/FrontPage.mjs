@@ -65,7 +65,7 @@ export class FrontPage extends HTMLElement {
 
     // Attributes.
     let href = this.getAttribute('href'),
-    target = this.getAttribute('href'),
+    target = this.getAttribute('target'),
     kf = this.getAttribute('anim')
       || this.getAttribute('animation')
       || this.getAttribute('keyframes'),
@@ -78,7 +78,6 @@ export class FrontPage extends HTMLElement {
     target && target !== 'undefined' && target !== 'null' || (
       href && !href.startsWith('#') && (target = '_blank')
     );
-    console.log('>', href, target);
     target && button.setAttribute('target', target);
 
     // Animation.
