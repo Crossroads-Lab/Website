@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
-    <script src="src/scripts/initHead.mjs" type="module"></script>
+    <script src="src/scripts/initHead.mjs" type="module" defer></script>
     <script src="src/scripts/createContent.mjs" type="module" defer></script>
 
     <!-- Modules -->
@@ -9,6 +9,9 @@
 
     <!-- Static styles -->
     <style>
+      html, body {
+        background: black;
+      }
       body:not(:has(splash-screen.loaded)) :not(splash-screen) {
         display: none;
       }
