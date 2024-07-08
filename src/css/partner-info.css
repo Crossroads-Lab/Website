@@ -24,10 +24,14 @@ partner-info > a > div {
 }
 
 @media (hover: hover) and (pointer: fine), (-ms-high-contrast: active), (forced-colors: active) {
+  partner-info {
+    max-width: none;
+  }
+
   partner-info > a {
     position: relative;
     aspect-ratio: 1/1;
-    max-width: none;
+    width: none;
     min-width: 150px;
     min-height: 150px;
   }
