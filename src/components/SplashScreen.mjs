@@ -21,6 +21,8 @@ export class SplashScreen extends HTMLElement {
       body:not(:has(splash-screen.loaded)) :not(splash-screen) {
         display: none;
       }
+    `);
+    style.sheet.insertRule(`
       body:has(splash-screen) {
         display: none;
         background: blue;
