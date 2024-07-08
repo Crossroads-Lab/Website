@@ -22,12 +22,12 @@ export class SplashScreen extends HTMLElement {
         display: none;
       }
     `);
-    style.sheet.insertRule(`
+    style.innerHTML = (style.innerHTML || '') + `
       body:has(splash-screen) {
         display: none;
         background: blue;
       }
-    `);
+    `;
 
     // Attach shadow DOM to element.
     const shadow = this.attachShadow({mode: 'open'});
