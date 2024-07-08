@@ -22,6 +22,7 @@ export class TeamMember extends HTMLElement {
       a = this.childNodes[3];
 
     // Fill in the attributes.
+    this.setAttribute('title', `${name} | ${jobPosition}`);
     div.style.backgroundImage = `url(${src})`;
     h3.innerHTML = name;
     p.innerHTML = jobPosition;
