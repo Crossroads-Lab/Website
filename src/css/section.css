@@ -39,16 +39,16 @@
 .section > h2,
 .section > legend,
 .section > p
-.section > li {
+.section > ul li {
   text-wrap: balance;
   text-align: center;
 }
 
-.section > li {
+.section > ul li {
   padding-top: var(--text-gap);
   font-size: var(--size-18-20);
 }
 
-.section > li:first-of-type {
+.section > ul li:first-of-type {
   padding-top: 0;
 }
