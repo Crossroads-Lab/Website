@@ -23,11 +23,11 @@ export class SplashScreen extends HTMLElement {
 }
 
 // Augment style.
-style.innerHTML += `
-  body:not(:has(splash-screen.loaded)) :not(splash-screen) {
-    display: none;
-  }
-`;
+// style.innerHTML += `
+//   body:not(:has(splash-screen.loaded)) :not(splash-screen) {
+//     display: none;
+//   }
+// `;
 // style.sheet.insertRule(`
 //   body:not(:has(splash-screen.loaded)) :not(splash-screen) {
 //     display: none;

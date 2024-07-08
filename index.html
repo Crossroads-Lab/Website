@@ -1,11 +1,18 @@
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
-    <script src="src/scripts/initHead.mjs" type="module" defer></script>
+    <script src="src/scripts/initHead.mjs" type="module"></script>
     <script src="src/scripts/createContent.mjs" type="module" defer></script>
 
     <!-- Modules -->
     <script src="src/components/index.mjs" type="module"></script>
+
+    <!-- Static styles -->
+    <style>
+      body:not(:has(splash-screen.loaded)) :not(splash-screen) {
+        display: none;
+      }
+    </style>
   </head>
   <body>
     <splash-screen></splash-screen>
