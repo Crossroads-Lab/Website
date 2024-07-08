@@ -40,6 +40,9 @@ const createTemplate = () => {
     background: var(--blueberry);
     padding: var(--padding) var(--padding-width-90-percent);
   }
+  a {
+    color: inherit;
+  }
   img {
     filter: saturate(0) brightness(2);
   }
