@@ -39,6 +39,7 @@
 .section > h2,
 .section > legend,
 .section > p
+.section > ul,
 .section > ul li {
   text-wrap: balance;
   text-align: center;
