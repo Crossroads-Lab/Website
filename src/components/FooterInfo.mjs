@@ -116,6 +116,7 @@ const createTemplate = () => {
   meeting.classList.add('font-weight-bold');
   meeting.innerHTML = 'Book a Meeting';
   meeting.setAttribute('href', MEETING_LINK);
+  meeting.setAttribute('target', '_blank');
 
   // Copyright.
   copyright.classList.add('text-align-center');
