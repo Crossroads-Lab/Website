@@ -75,7 +75,9 @@ export class FrontPage extends HTMLElement {
 
     // Button.
     href && href !== 'undefined' && href !== 'null' && button.setAttribute('href', href);
-    target && target !== 'undefined' && target !== 'null' || (target = '_blank');
+    target && target !== 'undefined' && target !== 'null' || (
+      href && !href.startsWith('#') && (target = '_blank')
+    );
     button.setAttribute('target', target);
 
     // Animation.
