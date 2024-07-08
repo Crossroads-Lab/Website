@@ -107,13 +107,13 @@ const createTemplate = () => {
 
   // Email.
   email.classList.add('link');
-  email.classList.add('bold');
+  email.classList.add('font-weight-bold');
   email.innerHTML = EMAIL;
   email.setAttribute('href', `mailto:${EMAIL}`);
 
   // Meeting.
   meeting.classList.add('link');
-  meeting.classList.add('bold');
+  meeting.classList.add('font-weight-bold');
   meeting.innerHTML = 'Book a Meeting';
   meeting.setAttribute('href', MEETING_LINK);
 
