@@ -1,12 +1,13 @@
 partner-info {
   display: block;
+  max-width: 20%;
 }
 
 partner-info > a {
   display: flex;
   align-items: center;
   justify-content: center;
-  max-width: 20%;
+  width: 100%;
 }
 
 partner-info > a > img {
