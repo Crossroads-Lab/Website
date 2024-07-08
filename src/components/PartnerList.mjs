@@ -10,7 +10,7 @@ export class PartnerList extends HTMLElement {
   connectedCallback() {
     let innerHTML = '', partners = PARTNERS || [];
     for (let i = 0, l = partners.length; i !== l; ++i) {
-      innerHTML+= `<partner-info ${Object.entries(team[i]).map(([k, v]) => `${k}="${v}"`).join(' ')}></partner-info>`
+      innerHTML+= `<partner-info ${Object.entries(partners[i]).map(([k, v]) => `${k}="${v}"`).join(' ')}></partner-info>`
     }
     this.innerHTML = (this.innerHTML || '') + innerHTML;
   }
