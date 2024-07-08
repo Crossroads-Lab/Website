@@ -63,4 +63,4 @@ const createTemplate = () => {
 export default PartnerInfo;
 
 // Register component.
-customElements.define('team-member', PartnerInfo);
+customElements.define('partner-info', PartnerInfo);
