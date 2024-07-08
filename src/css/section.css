@@ -45,6 +45,10 @@
   text-align: center;
 }
 
+.section > p {
+  font-size: var(--size-16-18);
+}
+
 .section > ul li {
   padding-top: var(--text-gap);
   font-size: var(--size-16-18);
