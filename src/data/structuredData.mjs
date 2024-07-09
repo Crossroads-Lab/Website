@@ -3,9 +3,7 @@ import COMPANY_INFORMATION from './companyInformation.mjs';
 const {
   NAME,
   LEGAL_NAME,
-  TITTLE,
   DESCRIPTION,
-  MEETING_LINK,
   EMAIL,
   PHONE,
   FOUNDER,
