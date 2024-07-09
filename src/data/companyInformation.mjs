@@ -26,7 +26,7 @@ export const FAVICON = COMPANY_INFORMATION.FAVICON = 'assets/favicon.ico';
 export const STYLES = COMPANY_INFORMATION.STYLES = 'src/css/styles.css';
 export const TWITTER_CARD = COMPANY_INFORMATION.TWITTER_CARD = {
   site: '@XroadsVenture',
-  creator: '@AI_to_Product'
+  creator: '@iamnotanaibot'
 }
 
 // Default export.
