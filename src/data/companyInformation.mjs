@@ -10,13 +10,13 @@ export const SOCIALS = COMPANY_INFORMATION.SOCIALS = [
     value: 'LinkedIn',
     href: 'https://www.linkedin.com/company/crossroads-venture-studio',
   },
-  {
-    value: 'Instagram',
-    href: '',
-  },
+  // {
+  //   value: 'Instagram',
+  //   href: '',
+  // },
   {
     value: 'x',
-    href: '',
+    href: 'https://x.com/xroadsventure',
   }
 ];
 export const LOGO = COMPANY_INFORMATION.LOGO = 'assets/logos/logo-full-color.svg';

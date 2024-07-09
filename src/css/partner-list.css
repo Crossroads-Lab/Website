@@ -13,9 +13,11 @@ partner-list {
     display: -moz-grid;
     display: -ms-grid;
     display: grid;
-    grid-template-columns: repeat( 5, -webkit-minmax( 150px, 1fr ) );
-    grid-template-columns: repeat( 5, minmax( 150px, 1fr ) );
-    -ms-grid-columns: repeat( 5, minmax( 150px, 1fr ) );
+    --_cols-max: 5;
+    --_cols: var(--_cols-max);
+    grid-template-columns: repeat( var(--_cols), -webkit-minmax( 150px, 1fr ) );
+    grid-template-columns: repeat( var(--_cols), minmax( 150px, 1fr ) );
+    -ms-grid-columns: repeat( var(--_cols), minmax( 150px, 1fr ) );
     grid-template-rows: repeat( auto-fit, -webkit-minmax( 150px, 1fr ) );
     grid-template-rows: repeat( auto-fit, minmax( 150px, 1fr ) );
     -ms-grid-rows: repeat( auto-fit, minmax( 150px, 1fr ) );
@@ -28,32 +30,24 @@ partner-list {
 
 @media only screen and (max-width: 900px) {
   partner-list {
-    grid-template-columns: repeat( 4, -webkit-minmax( 150px, 1fr ) );
-    grid-template-columns: repeat( 4, minmax( 150px, 1fr ) );
-    -ms-grid-columns: repeat( 4, minmax( 150px, 1fr ) );
+    --_cols: max(var(--_cols-max) - 1, 1);
   }
 }
 
 @media only screen and (max-width: 720px) {
   partner-list {
-    grid-template-columns: repeat( 3, -webkit-minmax( 150px, 1fr ) );
-    grid-template-columns: repeat( 3, minmax( 150px, 1fr ) );
-    -ms-grid-columns: repeat( 3, minmax( 150px, 1fr ) );
+    --_cols: max(var(--_cols-max) - 2, 1);
   }
 }
 
 @media only screen and (max-width: 560px) {
   partner-list {
-    grid-template-columns: repeat( 2, -webkit-minmax( 150px, 1fr ) );
-    grid-template-columns: repeat( 2, minmax( 150px, 1fr ) );
-    -ms-grid-columns: repeat( 2, minmax( 150px, 1fr ) );
+    --_cols: max(var(--_cols-max) - 3, 1);
   }
 }
 
 @media only screen and (max-width: 300px) {
   partner-list {
-    grid-template-columns: -webkit-minmax( 150px, 1fr );
-    grid-template-columns: minmax( 150px, 1fr );
-    -ms-grid-columns: minmax( 150px, 1fr );
+    --_cols: max(var(--_cols-max) - 4, 1);
   }
 }
