@@ -23,8 +23,9 @@ const title = COMPANY_INFORMATION.TITLE || [
 ].filter(x => x).join(' | '),
 name = COMPANY_INFORMATION.NAME || title,
 description = COMPANY_INFORMATION.DESCRIPTION || title,
-image =  COMPANY_INFORMATION.IMAGE || COMPANY_INFORMATION.LOGO,
 { site: twitterSite, creator: twitterCreator = twitterSite} = COMPANY_INFORMATION.TWITTER_CARD || COMPANY_INFORMATION.TWITTER || {};
+let image = COMPANY_INFORMATION.IMAGE || COMPANY_INFORMATION.LOGO;
+image && (image = window.location.href + image);
 
 // Add title to head.
 addTitle({title, comment: 'Document title'});
